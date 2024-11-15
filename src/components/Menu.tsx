@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const menuItems = [
   {
     title: "MENU",
@@ -112,3 +115,24 @@ const menuItems = [
     ],
   },
 ];
+
+const Menu = () => {
+  return (
+    <div className="h-full text-sm lg:ml-5 md:text-md truncate flex flex-col justify-around">
+      {
+        menuItems.map((i) => (
+          <div className="flex flex-col justify-between gap-2" key={i.title}>
+            <span className="hidden lg:block text-gray-400 font-light my-2">{i.title}</span>
+            {i.items.map(item=>(
+              <Link href={item.href} key={item.label} className="w-full flex justify-center lg:justify-start py-1.5 gap-2 text-gray-500 hover:text-slate-800">
+                <Image src={item.icon} alt="{item.label} + icon" width={20} height={20}/>
+                <span className="hidden lg:block">{item.label}</span>
+              </Link>
+            ))}
+          </div>
+        ))}
+    </div>
+  )
+}
+
+export default Menu
