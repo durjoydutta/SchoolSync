@@ -118,7 +118,7 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="h-full text-sm lg:ml-5 md:text-md truncate flex flex-col justify-around">
+    <div className="h-full text-sm lg:ml-5 md:text-md flex flex-col justify-around">
       {
         menuItems.map((i) => (
           <div className="flex flex-col justify-between gap-2" key={i.title}>
@@ -126,7 +126,7 @@ const Menu = () => {
             {i.items.map(item=>(
               <Link href={item.href} key={item.label} className="w-full flex justify-center lg:justify-start py-1.5 gap-2  hover:text-slate-800">
                 <Image className="mix-blend-multiply" src={item.icon} alt="{item.label} + icon" width={20} height={20}/>
-                <span className="hidden lg:block">{item.label}</span>
+                <span className="hidden lg:block truncate ...">{item.label}</span>
               </Link>
             ))}
           </div>
