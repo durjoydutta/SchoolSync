@@ -118,11 +118,11 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="h-full text-sm font-medium md:pl-2.5 lg:pl-3 flex flex-col justify-evenly">
+    <div className="h-max text-sm font-medium md:pl-2.5 lg:pl-3 py-8 md:py-0 flex flex-col flex-grow justify-between">
       {
         menuItems.map((i) => (
-          <div className="flex flex-col justify-between gap-5" key={i.title}>
-            <span className="hidden md:block text-gray-400 font-light my-2">{i.title}</span>
+          <div className="flex flex-col justify-between pb-3 gap-5" key={i.title}>
+            <span className="hidden md:block text-gray-400 font-light mt-4">{i.title}</span>
             {i.items.map(item => (
               <Link href={item.href} key={item.label} className="w-full flex justify-center md:justify-start gap-2 text-gray-500 group transition-all duration-300 ease-in-out">
                 <Image className="mix-blend-multiply" src={item.icon} alt="{item.label} + icon" width={22} height={22} />
