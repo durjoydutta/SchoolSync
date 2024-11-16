@@ -19,24 +19,12 @@ const events = [//temp data for calendar
     },
     {
       id: 2,
-      title: "Math Olympiad Workshop",
-      time: "1:00 PM - 3:00 PM",
-      description: "Preparation workshop for students participating in the Math Olympiad.",
-    },
-    {
-      id: 3,
       title: "Science Exhibition",
       time: "9:00 AM - 4:00 PM",
       description: "Annual event showcasing student science projects and experiments.",
     },
     {
-      id: 4,
-      title: "Staff Meeting",
-      time: "4:30 PM - 5:30 PM",
-      description: "Discussion on upcoming events and administrative updates.",
-    },
-    {
-      id: 5,
+      id: 3,
       title: "Sports Day Rehearsal",
       time: "8:00 AM - 10:00 AM",
       description: "Practice session for students participating in Sports Day events.",
@@ -48,8 +36,8 @@ const EventCalendar = () => {
   const [value, onChange] = useState<Value>(new Date());
 
   return (
-    <div className="bg-white p-4 rounded-md">
-      <Calendar onChange={onChange} value={value} />
+    <div className="w-full bg-white p-4 rounded-md flex flex-col items-stretch">
+      <Calendar onChange={onChange} value={value}/>
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold my-4">Events</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />

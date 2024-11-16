@@ -10,7 +10,7 @@ const AdminPage = () => {
     <div className="pl-3 flex gap-4 flex-col md:flex-row">
 
       {/* LEFT */}
-      <div className="w-full lg:w-2/3 flex flex-col gap-8">
+      <div className="w-full lg:w-2/3 flex flex-col flex-grow gap-8">
         {/* USER CARDS */}
         <div className="flex gap-4 justify-between flex-wrap">
           <UserCard type="student" />
@@ -29,13 +29,12 @@ const AdminPage = () => {
             <AttendanceChart />
           </div>
         </div>
-        {/* BOTTOM CHART */}
+        {/* FINANCE CHART */}
         <div className="w-full h-[500px]">
           <FinanceChart />
         </div>
       </div>
-
-      {/* RIGHT */}
+      {/* RIGHT EVENT PANEL */}
       <div className="w-full lg:w-1/3 flex flex-col gap-8">
         <EventCalendar />
         <Announcements/>
