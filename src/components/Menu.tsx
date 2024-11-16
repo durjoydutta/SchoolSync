@@ -118,7 +118,7 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="h-full text-sm font-medium lg:ml-5 md:pl-1 lg:pl-2 flex flex-col justify-around">
+    <div className="h-full text-sm font-medium lg:ml-5 md:pl-1 lg:pl-2 flex flex-col justify-between">
       {
         menuItems.map((i) => (
           <div className="flex flex-col justify-between gap-2" key={i.title}>
