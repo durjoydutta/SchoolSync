@@ -18,9 +18,9 @@ const AdminPage = () => {
           <UserCard type="teacher" />
           <UserCard type="staff" />
         </div>
-        {/* SEX-RATIO CHARTS */}
+        {/* MIDDLE CHARTS */}
         <div className="flex gap-4 flex-col lg:flex-row">
-          {/* COUNT CHART */}
+          {/* SEX-RATIO CHART */}
           <div className="w-full h-[450px] lg:w-[40%]">
             <RatioChart />
           </div>
