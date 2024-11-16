@@ -5,17 +5,17 @@ import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts
 const data = [ // Data for the chart
     {
         name: 'Total',
-        count: 489,
+        count: 420,
         fill: '#FFFFFF',
     },
     {
         name: 'Boys',
-        count: 420,
+        count: 220,
         fill: "#C3EBFA",
     },
     {
         name: 'Girls',
-        count: 69,
+        count: 200,
         fill: "#FAE27C",
     },
 ];
@@ -55,13 +55,13 @@ const RatioChart = () => {
         <div className="flex justify-center gap-16">
           <div className="flex flex-col gap-1">
             <div className="w-5 h-5 bg-lamaSky rounded-full" />
-            <h1 className="font-bold">420</h1>
-            <h2 className="text-xs text-gray-300">Boys (55%)</h2>
+            <h1 className="font-bold">220</h1>
+            <h2 className="text-xs text-gray-300">Boys (52%)</h2>
           </div>
           <div className="flex flex-col gap-1">
             <div className="w-5 h-5 bg-lamaYellow rounded-full" />
-            <h1 className="font-bold">69</h1>
-            <h2 className="text-xs text-gray-300">Girls (45%)</h2>
+            <h1 className="font-bold">200</h1>
+            <h2 className="text-xs text-gray-300">Girls (48%)</h2>
           </div>
         </div>
       </div>
