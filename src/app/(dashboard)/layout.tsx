@@ -11,8 +11,8 @@ export default function DashboardLayout({
   return (
     <div className="h-screen flex bg-[#f7f8fa] p-3 overflow-hidden">
       {/* LEFT PANEL - link to Home and menu sidebar*/}
-      <div className="left w-[15%] md:w[8%] lg:w[5%] xl:w-[13%] bg-white rounded-xl">
-        <Link href="/" className="flex justify-center items-center gap-1 mb-2">
+      <div className="left w-[15%] md:w[8%] lg:w[5%] xl:w-[13%] bg-white pt-4 rounded-xl">
+        <Link href="/" className="flex justify-center items-center gap-1">
           <Image src='/logo.png' alt='logo' width={32} height={32}/>
           <span className="hidden lg:block text-lg font-semibold">SchoolSync</span>
         </Link>
