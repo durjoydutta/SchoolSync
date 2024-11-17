@@ -37,6 +37,20 @@ const events: Event[] = [
     description: "Practice session for students participating in Sports Day events.",
     date: new Date(),
   },
+  {
+    id: 4,
+    title: "Sports Day Rehearsal",
+    time: "8:00 AM - 10:00 AM",
+    description: "Practice session for students participating in Sports Day events.",
+    date: new Date("2024-12-24"),
+  },
+  {
+    id: 5,
+    title: "Science Exhibition",
+    time: "2:00 PM - 4:00 PM",
+    description: "Practice session for students participating in Sports Day events.",
+    date: new Date("2024-12-24"),
+  },
 ]
 
 export default function EventCalendar() {
