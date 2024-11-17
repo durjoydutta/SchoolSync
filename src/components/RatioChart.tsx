@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const data = [ // Data for the chart
   {
@@ -23,7 +24,7 @@ const data = [ // Data for the chart
 
 const RatioChart = () => {
   return (
-    <div className="bg-white rounded-xl w-full h-full p-4">
+    <Card className="bg-white rounded-xl w-full h-full p-4">
       {/* TITLE */}
       <div className="flex justify-between items-center">
         <h1 className="text-lg font-semibold">Student Ratio</h1>
@@ -64,7 +65,7 @@ const RatioChart = () => {
           <h2 className="text-xs text-gray-300">Girls (48%)</h2>
         </div>
       </div>
-    </div>
+    </Card>
 
   )
 }

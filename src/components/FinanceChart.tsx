@@ -1,6 +1,7 @@
 "use client";
-
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image";
+
 import {
   LineChart,
   Line,
@@ -77,7 +78,7 @@ const data = [
 
 const FinanceChart = () => {
   return (
-    <div className="bg-white rounded-xl w-full h-full p-4">
+    <Card className="bg-white rounded-xl w-full h-full p-4">
       <div className="flex justify-between items-center">
         <h1 className="text-lg font-semibold">Finance</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />
@@ -118,7 +119,7 @@ const FinanceChart = () => {
           <Line type="monotone" dataKey="expense" stroke="#CFCEFF" strokeWidth={5}/>
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </Card>
   );
 };
 

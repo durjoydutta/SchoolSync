@@ -1,6 +1,9 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
 const Announcements = () => {
   return (
-    <div className="bg-white p-4 rounded-md">
+    <Card className="w-full bg-white pt-4 rounded-md">
+      <CardContent>
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold">Announcements</h1>
         <span className="text-xs text-gray-400">View All</span>
@@ -43,7 +46,8 @@ const Announcements = () => {
           </p>
         </div>
       </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
