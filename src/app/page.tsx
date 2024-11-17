@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { GraduationCap, Users, UserCircle, BookOpen, ArrowRight, Bell, Calendar, ChartBar, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,18 +23,35 @@ const Homepage = () => {
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-black/[0.02] bg-[size:20px_20px] dark:bg-grid-white/[0.02]" />
 
-      <div className="absolute top-0 right-0 p-6 flex gap-4 z-50">
-        <Link href={"/login"}>
-          <Button variant="outline" className="bg-white/80 hover:bg-white/90 backdrop-blur-sm">
-            <LogIn className="w-4 h-4 mr-2" />
-            Login
-          </Button>
+      <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-50">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative w-8 h-8">
+            <Image
+              src="/logo.png"
+              alt="SchoolSync Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            SchoolSync
+          </span>
         </Link>
-        <Link href={"/signup"}>
-          <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
-            Sign Up Free
-          </Button>
-        </Link>
+        
+        <div className="flex gap-4">
+          <Link href={"/login"}>
+            <Button variant="outline" className="bg-white/80 hover:bg-white/90 backdrop-blur-sm">
+              <LogIn className="w-4 h-4 mr-2" />
+              Login
+            </Button>
+          </Link>
+          <Link href={"/signup"}>
+            <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
+              Sign Up Free
+            </Button>
+          </Link>
+        </div>
       </div>
 
       <div className="absolute inset-0">
