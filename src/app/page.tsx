@@ -21,21 +21,25 @@ const Homepage = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-black/[0.02] bg-[size:20px_20px] dark:bg-grid-white/[0.02]" />
-      
+
       <div className="absolute top-0 right-0 p-6 flex gap-4 z-50">
-        <Button variant="outline" className="bg-white/80 hover:bg-white/90 backdrop-blur-sm">
-          <LogIn className="w-4 h-4 mr-2" />
-          Login
-        </Button>
-        <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
-          Sign Up Free
-        </Button>
+        <Link href={"/login"}>
+          <Button variant="outline" className="bg-white/80 hover:bg-white/90 backdrop-blur-sm">
+            <LogIn className="w-4 h-4 mr-2" />
+            Login
+          </Button>
+        </Link>
+        <Link href={"/signup"}>
+          <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
+            Sign Up Free
+          </Button>
+        </Link>
       </div>
-      
+
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob"/>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"/>
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"/>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
       </div>
 
       <div className="relative">
@@ -45,15 +49,15 @@ const Homepage = () => {
               <Badge variant="outline" className="px-4 py-1 rounded-full text-sm animate-fade-in">
                 Transforming Education
               </Badge>
-              
+
               <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 SchoolSync
               </h1>
-              
+
               <p className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
                 Next-Gen School Management
               </p>
-              
+
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Experience the future of education management with our comprehensive platform that seamlessly connects administrators, teachers, students, and parents.
               </p>

@@ -1,7 +1,10 @@
-const Signup = () => {
+import  SignupForm from "@/components/signup-form"
+const SignupPage = () => {
   return (
-    <div>Signup</div>
+    <div className="flex h-screen w-full items-center justify-center px-4">
+      <SignupForm/>
+    </div>
   )
 }
 
-export default Signup
+export default SignupPage;
