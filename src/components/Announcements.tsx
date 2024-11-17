@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const Announcements = () => {
   return (
-    <Card className="w-full bg-white pt-4 rounded-md">
+    <Card className="w-full bg-white pt-4 rounded-xl">
       <CardContent>
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold">Announcements</h1>
