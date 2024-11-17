@@ -1,6 +1,6 @@
 {
-  "name": "schoolsync-next-dashboard",
-  "version": "0.1.0",
+  "name": "schoolsync-next-app",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
