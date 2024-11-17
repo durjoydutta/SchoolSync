@@ -1,7 +1,11 @@
-const Login = () => {
+import  LoginForm from "@/components/login-form"
+const LoginPage = () => {
   return (
-    <div>Login</div>
+    <div className="flex h-screen w-full items-center justify-center px-4">
+      <LoginForm />
+    </div>
   )
 }
 
-export default Login
+export default LoginPage;
+
