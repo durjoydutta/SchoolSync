@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { GraduationCap, Users, UserCircle, BookOpen, ArrowRight, Bell, Calendar, ChartBar, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,24 +20,10 @@ const Homepage = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-black/[0.02] bg-[size:20px_20px] dark:bg-grid-white/[0.02]" />
 
-      <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-50">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-8 h-8">
-            <Image
-              src="/logo.png"
-              alt="SchoolSync Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            SchoolSync
-          </span>
-        </Link>
-        
+      <div className="absolute top-0 right-0 p-6 flex flex-wrap justify-between items-center z-5">
+
+
         <div className="flex gap-4">
           <Link href={"/login"}>
             <Button variant="outline" className="bg-white/80 hover:bg-white/90 backdrop-blur-sm">
@@ -61,14 +46,14 @@ const Homepage = () => {
       </div>
 
       <div className="relative">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="text-center space-y-8 mb-16">
+        <div className="flex flex-col items-center max-w-7xl mx-auto px-6 py-24">
+          <div className="text-center space-y-8 mb-10">
             <div className="space-y-4">
               <Badge variant="outline" className="px-4 py-1 rounded-full text-sm animate-fade-in">
                 Transforming Education
               </Badge>
 
-              <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent pb-3">
                 SchoolSync
               </h1>
 
@@ -81,9 +66,9 @@ const Homepage = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="max-w-2xl flex flex-wrap justify-center items-stretch gap-4">
               {stats.map((stat) => (
-                <Card key={stat.label} className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0">
+                <Card key={stat.label} className="flex flex-1 justify-center bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0">
                   <CardContent className="p-6">
                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stat.value}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
@@ -93,7 +78,7 @@ const Homepage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
               { href: "/admin", label: "Admin Dashboard", icon: Users, color: "from-blue-500 to-blue-700" },
               { href: "/teacher", label: "Teacher Portal", icon: GraduationCap, color: "from-indigo-500 to-indigo-700" },
@@ -115,7 +100,7 @@ const Homepage = () => {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="w-full grid md:grid-cols-3 gap-6">
             {features.map((feature) => (
               <Card key={feature.title} className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
