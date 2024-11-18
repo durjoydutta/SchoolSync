@@ -15,9 +15,9 @@ export default function DashboardLayout({
         {children}
       </div>
       {/* MENU PANEL - menu sidebar*/}
-      <div className="hidden w-[15%] md:w[8%] lg:w[5%] xl:w-[13%] bg-white pt-4 rounded-xl flex flex-col justify-between">
+      {/* <div className="w-[15%] md:w[8%] lg:w[5%] xl:w-[13%] bg-white pt-4 rounded-xl flex flex-col justify-between">
         <MenuBar />
-      </div>
+      </div> */}
     </div>
   );
 }
