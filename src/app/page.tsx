@@ -27,7 +27,7 @@ const Homepage = () => {
       </div>
 
       <div className="h-svh ">
-        <div className="absolute top-0 right-0 p-6 flex justify-between items-center z-5">
+        <div className="absolute top-0 right-0 p-6 flex justify-between items-center z-50">
           <div className="flex gap-4">
             <Link href={"/login"}>
               <Button variant="outline" className="bg-white/80 hover:bg-white/90 backdrop-blur-sm">
