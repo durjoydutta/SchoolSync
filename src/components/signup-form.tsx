@@ -55,7 +55,7 @@ export default function CardsCreateAccount() {
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select your role" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="z-[101]">
             <SelectItem value="teacher">Teacher</SelectItem>
             <SelectItem value="parent">Parent</SelectItem>
             <SelectItem value="student">Student</SelectItem>
