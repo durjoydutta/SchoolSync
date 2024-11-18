@@ -75,7 +75,7 @@ const Homepage = () => {
             ))}
           </div>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { href: "/admin", label: "Admin Dashboard", icon: Users, color: "from-blue-500 to-blue-700" },
               { href: "/teacher", label: "Teacher Portal", icon: GraduationCap, color: "from-indigo-500 to-indigo-700" },
@@ -97,7 +97,7 @@ const Homepage = () => {
             ))}
           </div>
 
-          <div className="w-full grid md:grid-cols-3 gap-6">
+          <div className="w-full grid grid-cols-1 gap-6">
             {features.map((feature) => (
               <Card key={feature.title} className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
