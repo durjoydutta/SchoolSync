@@ -37,7 +37,7 @@ const Homepage = () => {
             </Link>
             <Link href={"/signup"}>
               <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
-                Sign Up Free
+                Sign Up
               </Button>
             </Link>
           </div>
