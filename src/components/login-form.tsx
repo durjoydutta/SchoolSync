@@ -40,12 +40,14 @@ export default function LoginForm() {
             </div>
             <Input id="password" type="password" placeholder="worldcup@2022" required />
           </div>
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-indigo-600
+         text-white hover:from-blue-700 hover:to-indigo-700
+         transition-all duration-300 hover:scale-105">
             Login
           </Button>
-          <Button variant="outline" className="w-full">
+          {/* <Button variant="outline" className="w-full">
             Login with Google
-          </Button>
+          </Button> */}
         </div>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
