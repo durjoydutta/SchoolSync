@@ -1,17 +1,16 @@
 "use client"
 
-import * as React from "react"
+import Link from "next/link"
+import Image from "next/image"
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
+  House,
+  BarChart3,
+  Calendar,
+  FileText,
+  GraduationCap,
+  Layers,
   Settings2,
-  SquareTerminal,
+  Users,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -26,89 +25,123 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 
-// This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "ddc",
+    email: "contact.durjoy@gmail.com",
+    avatar: "https://github.com/durjoydutta.png",
   },
   teams: [
     {
-      name: "Academic Co-ordinator",
-      logo: GalleryVerticalEnd,
-      plan: "Academia",
+      name: "Students",
+      logo: GraduationCap,
+      plan: "Leadership",
+    },
+
+    {
+      name: "Teachers",
+      logo: GraduationCap,
+      plan: "Academics",
     },
     {
-      name: "Financial Administrator",
-      logo: AudioWaveform,
-      plan: "Finance",
-    },
-    {
-      name: "Registrar",
-      logo: Command,
-      plan: "Records",
+      name: "Staff",
+      logo: Users,
+      plan: "Administration",
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
-      icon: SquareTerminal,
+      icon: BarChart3,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Overview",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Key Metrics",
           url: "#",
         },
         {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "Announcements",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Academic Management",
       url: "#",
-      icon: BookOpen,
+      icon: GraduationCap,
       items: [
         {
-          title: "Introduction",
+          title: "Class Schedules",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "Subjects",
           url: "#",
         },
         {
-          title: "Tutorials",
+          title: "Assignments",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Staff",
+      url: "#",
+      icon: Users,
+      items: [
+        {
+          title: "Teachers",
           url: "#",
         },
         {
-          title: "Changelog",
+          title: "Support Staff",
+          url: "#",
+        },
+        {
+          title: "Attendance",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Students",
+      url: "#",
+      icon: GraduationCap,
+      items: [
+        {
+          title: "Student List",
+          url: "#",
+        },
+        {
+          title: "Admissions",
+          url: "#",
+        },
+        {
+          title: "Performance",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Reports",
+      url: "#",
+      icon: FileText,
+      items: [
+        {
+          title: "Attendance",
+          url: "#",
+        },
+        {
+          title: "Grades",
+          url: "#",
+        },
+        {
+          title: "Fees",
           url: "#",
         },
       ],
@@ -119,19 +152,15 @@ const data = {
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "General Settings",
           url: "#",
         },
         {
-          title: "Team",
+          title: "Roles & Permissions",
           url: "#",
         },
         {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "System Preferences",
           url: "#",
         },
       ],
@@ -139,19 +168,24 @@ const data = {
   ],
   projects: [
     {
-      name: "Design Engineering",
+      name: "Exam Planning",
       url: "#",
-      icon: Frame,
+      icon: Calendar,
+    },
+    {
+      name: "Event Management",
+      url: "#",
+      icon: Layers,
+    },
+    {
+      name: "Library System",
+      url: "#",
+      icon: FileText,
     },
     {
       name: "Sales & Marketing",
       url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
+      icon: FileText,
     },
   ],
 }
