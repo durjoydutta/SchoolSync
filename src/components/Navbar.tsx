@@ -20,13 +20,14 @@ import SchoolSyncLogo from "@/components/SchoolSyncLogo";
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between w-full gap-2 px-4 py-4">
+      {/* LEFT */}
       <div className="flex justify-start items-center gap-2">
         <div className="flex gap-2 items-center md:hidden">
           <SchoolSyncLogo />
         </div>
-        <Separator orientation="vertical" className="hidden sm:block md:hidden mx-2 h-6" />
+        <Separator orientation="vertical" className="hidden sm:block md:hidden h-6" />
         <Breadcrumb>
-          <BreadcrumbList className="hidden sm:flex flex-nowrap justify-between">
+          <BreadcrumbList className="hidden sm:flex flex-nowrap justify-between mt-1">
             <BreadcrumbItem>
               <BreadcrumbLink href="/dashboard">
                 Dashboard
@@ -39,7 +40,7 @@ const Navbar = () => {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-
+      {/* RIGHT */}
       <div className="w-full flex items-center justify-end gap-4 md:gap-6 py-4">
         <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
           <Image src="/message.png" alt="Messages" width={20} height={20} />
