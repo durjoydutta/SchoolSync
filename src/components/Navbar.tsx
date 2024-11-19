@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image"
-import { Menu } from "lucide-react" // burger menu icon
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const Navbar = () => {
@@ -21,7 +20,6 @@ const Navbar = () => {
         <AvatarImage src="/avatar.png" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
-      <Menu className="lg:hidden"/>
     </div>
   )
 }
