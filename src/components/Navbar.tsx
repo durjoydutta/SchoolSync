@@ -21,7 +21,7 @@ const Navbar = () => {
         <AvatarImage src="/avatar.png" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
-      <Menu />
+      <Menu className="lg:hidden"/>
     </div>
   )
 }
