@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"inter.className antialiased"}>
-        <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-50">
+        <div className="absolute top-0 left-0 p-6 flex justify-between items-center z-50">
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-10 h-10">
               <Image
