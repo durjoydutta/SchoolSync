@@ -63,8 +63,8 @@ const Homepage = () => {
       </div>
 
       <div className="lg:h-svh">
-        <div className="h-full flex flex-col gap-6 justify-around items-center max-w-7xl mx-auto px-6 pb-2">
-          <div className="w-full flex flex-wrap justify-center items-stretch gap-6 mt-16">
+        <div className="h-full flex flex-col gap-4 justify-around items-center max-w-7xl mx-auto px-6 pt-10 pb-2">
+          <div className="w-full flex flex-wrap justify-center items-stretch gap-6">
             {stats.map((stat) => (
               <Card key={stat.label} className="flex flex-1 justify-center bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
@@ -97,7 +97,7 @@ const Homepage = () => {
             ))}
           </div>
 
-          <div className="w-full grid grid-cols-1 gap-6">
+          <div className="w-full grid grid-cols-1 gap-4">
             {features.map((feature) => (
               <Card key={feature.title} className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0">
                 <CardContent className="p-6">

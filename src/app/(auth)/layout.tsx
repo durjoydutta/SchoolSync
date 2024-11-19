@@ -25,7 +25,7 @@ export default function AuthLayout({
             </div>
             {children}
             <span className="absolute bottom-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500 flex justify-stretch items-center gap-2">
-                <Link href="/termsofuse" className="text-sm shrink">Terms of Use</Link> | <Link href="/privacypolicy" className="text-sm shrink">Privacy Policy</Link>
+                <Link href="/termsofuse" className="text-sm shrink text-nowrap">Terms of Use</Link><span className="text-sm">|</span><Link href="/privacypolicy" className="text-sm shrink text-nowrap">Privacy Policy</Link>
             </span>
 
         </div >

@@ -69,18 +69,17 @@ export default function CardsCreateAccount() {
           <Label htmlFor="password">Password</Label>
           <Input id="password" type="password" placeholder="worldcup@2022" />
         </div>
-      </CardContent>
-      <CardFooter>
         <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-indigo-600
          text-white hover:from-blue-700 hover:to-indigo-700
-         transition-all duration-300 hover:scale-105">Create account</Button>
-      </CardFooter>
-      <div className="mb-2 text-center text-sm">
-        Already have an account?{" "}
-        <Link href="/login" className="underline">
-          Login
-        </Link>
-      </div>
+         transition-all duration-300 hover:scale-105">Create account
+        </Button>
+      </CardContent>
+        <div className="pb-4 text-center text-sm">
+          Already have an account?{" "}
+          <Link href="/login" className="underline">
+            Login
+          </Link>
+        </div>
     </Card>
   )
 }
