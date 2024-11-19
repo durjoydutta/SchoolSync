@@ -5,7 +5,7 @@ import Link from "next/link";
 const SchoolSyncLogo = () => {
   return (
     <Link href="/" className="flex items-center gap-2">
-      <div className="relative w-10 h-10">
+      <div className="relative h-9 w-9">
         <Image
           src="/logo.png"
           alt="SchoolSync Logo"

@@ -35,19 +35,19 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: "Academic Co-ordinator",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "Academia",
     },
     {
-      name: "Acme Corp.",
+      name: "Financial Administrator",
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: "Finance",
     },
     {
-      name: "Evil Corp.",
+      name: "Registrar",
       logo: Command,
-      plan: "Free",
+      plan: "Records",
     },
   ],
   navMain: [

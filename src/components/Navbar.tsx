@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,11 +11,13 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
 import {
   // SidebarInset,
   // SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+
 import SchoolSyncLogo from "@/components/SchoolSyncLogo";
 
 const Navbar = () => {
@@ -56,7 +59,7 @@ const Navbar = () => {
           <span className="text-[10px] text-gray-500 text-right">Admin</span>
         </div>
         <Avatar>
-          <AvatarImage src="/avatar.png" alt="User avatar" />
+          <AvatarImage src="https://github.com/durjoydutta.png" alt="User avatar" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <SidebarTrigger className="-ml-1" />
