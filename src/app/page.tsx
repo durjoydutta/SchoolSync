@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { GraduationCap, Users, UserCircle, BookOpen, ArrowRight, Bell, Calendar, ChartBar, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
+import Link from "next/link";
 
 const Homepage = () => {
   const stats = [
@@ -20,6 +21,23 @@ const Homepage = () => {
 
   return (
     <div className="min-h-screen w-full p-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden">
+      <div className="absolute top-0 left-0 p-6 flex justify-between items-center z-50">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative w-10 h-10">
+            <Image
+              src="/logo.png"
+              alt="SchoolSync Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            SchoolSync
+          </span>
+        </Link>
+      </div>
+
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
