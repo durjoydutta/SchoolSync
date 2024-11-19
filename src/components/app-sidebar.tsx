@@ -1,7 +1,9 @@
 "use client"
 
-import * as React from "react"
+import Link from "next/link"
+import Image from "next/image"
 import {
+  House,
   BarChart3,
   Calendar,
   FileText,
@@ -35,7 +37,7 @@ const data = {
       logo: GraduationCap,
       plan: "Leadership",
     },
-    
+
     {
       name: "Teachers",
       logo: GraduationCap,
@@ -177,6 +179,11 @@ const data = {
     },
     {
       name: "Library System",
+      url: "#",
+      icon: FileText,
+    },
+    {
+      name: "Sales & Marketing",
       url: "#",
       icon: FileText,
     },
