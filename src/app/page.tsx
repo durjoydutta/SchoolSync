@@ -8,7 +8,7 @@ import DashboardCards from "@/components/home/DashboardCards"
 import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
-import Header from "@/components/Header"
+import Navbar from "@/components/Navbar"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 const Homepage = () => {
@@ -41,7 +41,7 @@ const Homepage = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden z-0">
       <BackgroundAnimation />
-      <Header />
+      <Navbar />
       <Hero />
       <div className="container mx-auto px-4 py-12 space-y-24">
         <StatCards stats={stats} />

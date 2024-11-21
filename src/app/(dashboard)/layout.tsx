@@ -1,4 +1,4 @@
-import Navbar from "@/components/dashboard/Navbar"
+import Navbar from "@/components/Navbar"
 
 export default function DashboardLayout({
   children,
@@ -7,6 +7,7 @@ export default function DashboardLayout({
 }>) {
   return (
     <>
+      <Navbar />
       {/* MAIN PANEL - dashboard panels*/}
       <main className="h-full w-full flex bg-[#f7f8fa] p-3">
         {children}
