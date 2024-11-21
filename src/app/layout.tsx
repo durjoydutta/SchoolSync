@@ -19,16 +19,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"inter.className"}>
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-        <main className="flex flex-col antialiased">
-          {children}
-          <Footer />
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex flex-col antialiased">
+            {children}
+            <Footer />
+          </main>
         </ThemeProvider>
       </body>
     </html>

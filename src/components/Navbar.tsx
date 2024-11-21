@@ -32,6 +32,38 @@ const Navbar = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(true) // This should be replaced with actual auth logic
     const [userRole, setUserRole] = useState('student')
+
+    const navLoggedInStatus = () => !isLoggedIn ?
+        (<Link href={"/login"}>
+            <Button className="w-20 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
+                <LogIn className="w-full h-full mr-2" />
+                Login
+            </Button>
+        </Link>
+        ) : (
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="ddc" className="w-full justify-start ">
+                        <Avatar className="mt-[2px]">
+                            <AvatarImage src={data.user.avatar} alt="User avatar" />
+                            <AvatarFallback>DP</AvatarFallback>
+                        </Avatar>
+                        <ChevronDown className="ml-auto h-4 w-4" />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="z-[1000]">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Settings
+                        <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>Support</DropdownMenuItem>
+                    <DropdownMenuItem>Log out</DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+        )
+
     return (
         <motion.header
             initial={{ y: -100, opacity: 0 }}
@@ -42,38 +74,9 @@ const Navbar = () => {
             <BackgroundAnimation />
             <nav className="flex justify-between items-center mx-auto">
                 <SchoolSyncLogo />
-                <div className="flex gap-4">
-                    {!isLoggedIn ? (
-                        <Link href={"/login"}>
-                            <Button className="w-20 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
-                                <LogIn className="w-full h-full mr-2" />
-                                Login
-                            </Button>
-                        </Link>
-                    ) : (
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button variant="ddc" className="w-full justify-start ">
-                                    <Avatar className="mt-[2px]">
-                                        <AvatarImage src={data.user.avatar} alt="User avatar" />
-                                        <AvatarFallback>DP</AvatarFallback>
-                                    </Avatar>
-                                    <ChevronDown className="ml-auto h-4 w-4" />
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end" className="z-[1000]">
-                                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem>Profile</DropdownMenuItem>
-                                <DropdownMenuItem>Settings
-                                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem>Support</DropdownMenuItem>
-                                <DropdownMenuItem>Log out</DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    )}
-                    <DarkModeSwitch/>
+                <div className="flex justify-end items-center">
+                    <DarkModeSwitch />
+                    {navLoggedInStatus()}
                 </div>
             </nav>
         </motion.header>
