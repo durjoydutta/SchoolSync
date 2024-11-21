@@ -12,12 +12,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import {
-  // SidebarInset,
-  // SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-
 import SchoolSyncLogo from "@/components/SchoolSyncLogo";
 
 const Navbar = () => {
@@ -62,7 +56,6 @@ const Navbar = () => {
           <AvatarImage src="https://github.com/durjoydutta.png" alt="User avatar" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <SidebarTrigger className="-ml-1" />
       </div>
     </div>
   );
