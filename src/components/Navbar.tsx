@@ -14,11 +14,13 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
+    DropdownMenuShortcut,
 } from "@/components/ui/dropdown-menu"
 
 
 const data = {
     user: {
+        id: 1,
         name: "ddc",
         email: "contact.durjoy@gmail.com",
         avatar: "https://github.com/durjoydutta.png",
@@ -27,7 +29,7 @@ const data = {
 
 const Navbar = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(true) // This should be replaced with actual auth logic
+    const [isLoggedIn, setIsLoggedIn] = useState(false) // This should be replaced with actual auth logic
     const [userRole, setUserRole] = useState('student')
     return (
         <motion.header
@@ -42,8 +44,8 @@ const Navbar = () => {
                 <div className="flex gap-4">
                     {!isLoggedIn ? (
                         <Link href={"/login"}>
-                            <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
-                                <LogIn className="w-4 h-4 mr-2" />
+                            <Button className="w-20 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
+                                <LogIn className="w-full h-full mr-2" />
                                 Login
                             </Button>
                         </Link>
@@ -62,7 +64,10 @@ const Navbar = () => {
                                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>Profile</DropdownMenuItem>
-                                <DropdownMenuItem>Settings</DropdownMenuItem>
+                                <DropdownMenuItem>Settings
+                                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>Support</DropdownMenuItem>
                                 <DropdownMenuItem>Log out</DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
