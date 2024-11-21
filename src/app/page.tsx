@@ -1,57 +1,100 @@
-import { Bell, Calendar, ChartBar, GraduationCap, Users, UserCircle, BookOpen } from "lucide-react";
+'use client'
 
-import Header from "@/components/home/Header"
+import { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { Bell, Calendar, BarChart, GraduationCap, Users, UserCircle, BookOpen } from 'lucide-react'
 import Hero from "@/components/home/Hero"
-import DashboardContainer from "@/components/home/DashboardCards"
-import StatCards from "@/components/home/StatCards";
-import FeatureCards from "@/components/home/FeatureCards";
+import DashboardCards from "@/components/home/DashboardCards"
+import StatCards from "@/components/home/StatCards"
+import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
+// import Footer from "@/components/home/Footer"
+import Header from "@/components/home/Header"
 
 const Homepage = () => {
+  const controls = useAnimation()
+
+  useEffect(() => {
+    controls.start('visible')
+  }, [controls])
+
   const stats = [
     { label: "Active Students", value: "2,000+" },
     { label: "Expert Teachers", value: "150+" },
     { label: "Success Rate", value: "95%" },
     { label: "Daily Classes", value: "100+" },
-  ];
+  ]
 
   const dashboards = [
     { href: "/admin", label: "Admin Dashboard", icon: Users, color: "from-blue-500 to-blue-700" },
     { href: "/teacher", label: "Teacher Portal", icon: GraduationCap, color: "from-indigo-500 to-indigo-700" },
     { href: "/parent", label: "Parent Access", icon: UserCircle, color: "from-purple-500 to-purple-700" },
     { href: "/student", label: "Student Hub", icon: BookOpen, color: "from-violet-500 to-violet-700" },
-  ];
+  ]
 
   const features = [
     { icon: Bell, title: "Instant Updates", description: "Real-time notifications about grades, attendance & events" },
     { icon: Calendar, title: "Smart Scheduling", description: "AI-powered class scheduling system" },
-    { icon: ChartBar, title: "Performance Analytics", description: "Detailed insights into academic progress" },
-  ];
+    { icon: BarChart, title: "Performance Analytics", description: "Detailed insights into academic progress" },
+  ]
 
   return (
-    <div className="min-h-screen w-full p-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden">
-
-      <div className="absolute inset-0 z={-5}">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-        <div className="absolute top-1/4 left-1/2 translate -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
-      </div>
-
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden">
+      <BackgroundAnimation />
       <Header />
       <Hero />
-
-      <div className="lg:h-svh">
-        <div className="h-full flex flex-col gap-4 justify-around items-center max-w-7xl mx-auto px-6 pt-10 pb-2">
-          <StatCards stats={stats} />
-          <DashboardContainer dashboards = {dashboards} />
+      <div className="container mx-auto px-4 py-12 space-y-24">
+        <StatCards stats={stats} />
+        <DashboardCards dashboards={dashboards} />
+        <div id="features">
           <FeatureCards features={features} />
-          <GetStartedButton />
         </div>
+        <GetStartedButton />
       </div>
-
     </div>
-  );
-};
+  )
+}
 
-export default Homepage;
+const BackgroundAnimation = () => (
+  <div className="absolute inset-0 z-0 overflow-hidden">
+    <motion.div
+      className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl"
+      animate={{
+        x: [0, 100, 0],
+        y: [0, 50, 0],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
+    />
+    <motion.div
+      className="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 rounded-full mix-blend-multiply filter blur-xl"
+      animate={{
+        x: [0, -100, 0],
+        y: [0, 100, 0],
+      }}
+      transition={{
+        duration: 25,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
+    />
+    <motion.div
+      className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-xl"
+      animate={{
+        x: [0, 50, 0],
+        y: [0, -50, 0],
+      }}
+      transition={{
+        duration: 30,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
+    />
+  </div>
+)
+
+export default Homepage
+

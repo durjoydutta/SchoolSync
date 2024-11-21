@@ -4,7 +4,7 @@ import {
   SidebarProvider,
   // SidebarTrigger,
 } from "@/components/ui/sidebar"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/dashboard/Navbar"
 
 export default function DashboardLayout({
   children,
