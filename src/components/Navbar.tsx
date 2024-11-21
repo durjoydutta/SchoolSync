@@ -16,6 +16,7 @@ import {
     DropdownMenuTrigger,
     DropdownMenuShortcut,
 } from "@/components/ui/dropdown-menu"
+import DarkModeSwitch from "@/components/DarkModeSwitch";
 
 
 const data = {
@@ -72,6 +73,7 @@ const Navbar = () => {
                             </DropdownMenuContent>
                         </DropdownMenu>
                     )}
+                    <DarkModeSwitch/>
                 </div>
             </nav>
         </motion.header>
