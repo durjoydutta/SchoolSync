@@ -3,7 +3,6 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun } from "lucide-react";
-import { useState } from "react";
 import { useTheme } from "next-themes"
 
 export default function Switch13() {
