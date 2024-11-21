@@ -8,7 +8,8 @@ import DashboardCards from "@/components/home/DashboardCards"
 import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
-import Header from "@/components/home/Header"
+import Header from "@/components/Header"
+import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 const Homepage = () => {
   const controls = useAnimation()
@@ -38,7 +39,7 @@ const Homepage = () => {
   ]
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden z-0">
       <BackgroundAnimation />
       <Header />
       <Hero />
@@ -53,47 +54,6 @@ const Homepage = () => {
     </div>
   )
 }
-
-const BackgroundAnimation = () => (
-  <div className="absolute inset-0 z-0 overflow-hidden">
-    <motion.div
-      className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl"
-      animate={{
-        x: [0, 100, 0],
-        y: [0, 50, 0],
-      }}
-      transition={{
-        duration: 20,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    />
-    <motion.div
-      className="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 rounded-full mix-blend-multiply filter blur-xl"
-      animate={{
-        x: [0, -100, 0],
-        y: [0, 100, 0],
-      }}
-      transition={{
-        duration: 25,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    />
-    <motion.div
-      className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-xl"
-      animate={{
-        x: [0, 50, 0],
-        y: [0, -50, 0],
-      }}
-      transition={{
-        duration: 30,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    />
-  </div>
-)
 
 export default Homepage
 

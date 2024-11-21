@@ -5,6 +5,7 @@ import Link from "next/link";
 import SchoolSyncLogo from "@/components/SchoolSyncLogo"
 import { motion } from 'framer-motion';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 
 const Header = () => {
@@ -15,6 +16,7 @@ const Header = () => {
             transition={{ duration: 0.5 }}
             className="fixed top-0 left-0 right-0 bg-none backdrop-blur-md shadow-md py-4 px-6 z-[999]"
         >
+            <BackgroundAnimation />
             <nav className="flex justify-between items-center max-w-[94rem] mx-auto">
                 <SchoolSyncLogo />
                 <div className="flex gap-4">
