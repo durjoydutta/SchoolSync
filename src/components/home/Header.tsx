@@ -13,23 +13,18 @@ const Header = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-none backdrop-blur-md shadow-md py-4 px-6 fixed top-0 left-0 right-0"
+            className="fixed top-0 left-0 right-0 bg-none backdrop-blur-md shadow-md py-4 px-6 z-[999]"
         >
             <nav className="flex justify-between items-center max-w-[94rem] mx-auto">
                 <SchoolSyncLogo />
                 <div className="flex gap-4">
                     <Link href={"/login"}>
-                        <Button variant="outline" className="bg-white/80 hover:bg-white/90 backdrop-blur-sm">
+                        <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
                             <LogIn className="w-4 h-4 mr-2" />
                             Login
                         </Button>
                     </Link>
-                    <Link href={"/signup"}>
-                        <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
-                            Sign Up
-                        </Button>
-                    </Link>
-                    <Avatar className="">
+                    <Avatar className="mt-1">
                         <AvatarImage src="https://github.com/durjoydutta.png" alt="User avatar" />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
