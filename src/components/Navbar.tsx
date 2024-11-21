@@ -29,7 +29,7 @@ const data = {
 
 const Navbar = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false) // This should be replaced with actual auth logic
+    const [isLoggedIn, setIsLoggedIn] = useState(true) // This should be replaced with actual auth logic
     const [userRole, setUserRole] = useState('student')
     return (
         <motion.header
