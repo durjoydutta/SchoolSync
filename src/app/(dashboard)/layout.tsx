@@ -11,7 +11,7 @@ export default function DashboardLayout({
         <Navbar />
       </header>
       {/* MAIN PANEL - dashboard panels*/}
-      <main className="h-full w-full flex bg-[#f7f8fa] p-3">
+      <main className="h-full w-full bg-[#f7f8fa] p-3 flex flex-col">
         {children}
       </main>
     </>
