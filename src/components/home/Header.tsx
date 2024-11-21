@@ -3,7 +3,8 @@ import { LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SchoolSyncLogo from "@/components/SchoolSyncLogo"
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 
 const Header = () => {
@@ -12,9 +13,9 @@ const Header = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-white/80 backdrop-blur-md shadow-md py-4 px-6 fixed top-0 left-0 right-0 z-50"
+            className="bg-none backdrop-blur-md shadow-md py-4 px-6 fixed top-0 left-0 right-0"
         >
-            <nav className="flex justify-between items-center max-w-7xl mx-auto">
+            <nav className="flex justify-between items-center max-w-[94rem] mx-auto">
                 <SchoolSyncLogo />
                 <div className="flex gap-4">
                     <Link href={"/login"}>
@@ -28,6 +29,10 @@ const Header = () => {
                             Sign Up
                         </Button>
                     </Link>
+                    <Avatar className="">
+                        <AvatarImage src="https://github.com/durjoydutta.png" alt="User avatar" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
                 </div>
             </nav>
         </motion.header>

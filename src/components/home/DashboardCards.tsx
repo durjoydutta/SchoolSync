@@ -40,7 +40,7 @@ const DashboardCards: React.FC<DashboardCardsProps> = ({ dashboards }) => {
           <Link href={item.href} className="group">
             <Card className="relative overflow-hidden h-full transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0">
               <motion.div
-                className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-80 group-hover:opacity-100 transition-opacity`}
+                className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity`}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 0.8 } : { opacity: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

@@ -17,10 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"inter.className antialiased"}>
-        {children}
+      <body className={"inter.className"}>
+        <main className="flex flex-col antialiased">
+          {children}
+          <Footer />
+        </main>
       </body>
-      <Footer/>
     </html>
   );
 }

@@ -8,7 +8,6 @@ import DashboardCards from "@/components/home/DashboardCards"
 import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
-// import Footer from "@/components/home/Footer"
 import Header from "@/components/home/Header"
 
 const Homepage = () => {
