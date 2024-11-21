@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 
 const Hero = () => {
     return (
-        <div className="hero h-screen flex flex-col justify-center items-center text-center gap-4">
+        <div className="hero h-svh flex flex-col justify-center items-center text-center gap-4">
             <Badge variant="outline" className="px-4 py-1 rounded-full text-sm lg:text-lg animate-fade-in">
                 Transforming Education
             </Badge>
