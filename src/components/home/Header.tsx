@@ -24,7 +24,7 @@ const Header = () => {
                             Login
                         </Button>
                     </Link>
-                    <Avatar className="mt-1">
+                    <Avatar className="mt-[2px]">
                         <AvatarImage src="https://github.com/durjoydutta.png" alt="User avatar" />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
