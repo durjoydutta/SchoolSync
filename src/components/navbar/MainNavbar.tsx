@@ -12,9 +12,8 @@ import AppNavigationMenu from '@/components/navbar/AppNavigationMenu';
 import {
     SidebarTrigger,
 } from "@/components/ui/sidebar"
-import {
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+import { BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
 
 const data = {
     user: {
@@ -67,7 +66,8 @@ const Navbar = () => {
             <nav className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
                     <SidebarTrigger className="" />
-                    <BreadcrumbSeparator />
+                    <Separator orientation="vertical" className="mr-2 h-4" />
+                    <BreadcrumbSeparator className="block" />
                     <AppNavigationMenu />
                 </div>
                 <div className="flex justify-end items-center gap-2">
