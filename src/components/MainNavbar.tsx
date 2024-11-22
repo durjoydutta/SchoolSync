@@ -54,6 +54,7 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: isVisible ? 0 : -100 }}
             transition={{ duration: 0.3 }}
+            id={"navbar"}
             className="fixed top-0 left-0 right-0 bg-none backdrop-blur-md shadow-md py-4 px-6 z-[999]"
         >
             <BackgroundAnimation />
