@@ -1,12 +1,12 @@
 "use client"
-import { LogIn, Menu, X, ChevronDown } from "lucide-react";
+import { LogIn, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SchoolSyncLogo from "@/components/SchoolSyncLogo"
-import { motion } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import BackgroundAnimation from "@/components/BackgroundAnimation"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 import DarkModeSwitch from "@/components/DarkModeSwitch";
 
-
 const data = {
     user: {
         id: 1,
@@ -29,9 +28,23 @@ const data = {
 }
 
 const Navbar = () => {
-
     const [isLoggedIn, setIsLoggedIn] = useState(true) // This should be replaced with actual auth logic
     const [userRole, setUserRole] = useState('student')
+    const [isVisible, setIsVisible] = useState(true)
+    const [lastScrollY, setLastScrollY] = useState(0)
+
+    const { scrollY } = useScroll()
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        if (latest < lastScrollY) {
+            // Scrolling up
+            setIsVisible(true)
+        } else if (latest > 100 && latest > lastScrollY) {
+            // Scrolling down and past the 100px mark
+            setIsVisible(false)
+        }
+        setLastScrollY(latest)
+    })
 
     const navLoggedInStatus = () => !isLoggedIn ?
         (<Link href={"/login"}>
@@ -66,9 +79,9 @@ const Navbar = () => {
 
     return (
         <motion.header
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ y: -100 }}
+            animate={{ y: isVisible ? 0 : -100 }}
+            transition={{ duration: 0.3 }}
             className="fixed top-0 left-0 right-0 bg-none backdrop-blur-md shadow-md py-4 px-6 z-[999]"
         >
             <BackgroundAnimation />
@@ -84,3 +97,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+
