@@ -60,19 +60,18 @@ const Navbar = () => {
             animate={{ y: isVisible ? 0 : -100 }}
             transition={{ duration: 0.3 }}
             id="navbar"
-            className="fixed top-0 right-0 md:static w-full backdrop-blur-md shadow-md py-4 px-6 sm:px-4 z-10"
+            className="fixed top-0 right-0 md:static w-full backdrop-blur-md shadow-md py-4 pl-6 pr-2 sm:px-4 z-10"
         >
             <BackgroundAnimation />
             <nav className="flex justify-between items-center">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">                    
                     <SidebarTrigger className="" />
                     <Separator orientation="vertical" className="mr-2 h-4" />
-                    <BreadcrumbSeparator className="block" />
                     <AppNavigationMenu />
                 </div>
-                <div className="flex justify-end items-center gap-2">
+                <div className="flex justify-end items-center">
                     <DarkModeSwitch />
-                    <div className="hidden sm:block mt-1">{navLoggedInStatus()}</div>
+                    <div className="sm:block mt-1">{navLoggedInStatus()}</div>
                 </div>
             </nav>
         </motion.header>
