@@ -67,7 +67,7 @@ const Navbar = () => {
             <nav className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
                     <SidebarTrigger className="" />
-                    <BreadcrumbSeparator className="w-10 h-10"/>
+                    <BreadcrumbSeparator />
                     <AppNavigationMenu />
                 </div>
                 <div className="flex justify-end items-center gap-2">
