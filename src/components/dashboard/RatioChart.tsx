@@ -7,7 +7,7 @@ const data = [ // Data for the chart
   {
     name: 'Total',
     count: 420,
-    fill: '#FFFFFF',
+    fill: 'hsl(var(--background))',
   },
   {
     name: 'Girls',
@@ -24,7 +24,7 @@ const data = [ // Data for the chart
 
 const RatioChart = () => {
   return (
-    <Card className="bg-white rounded-xl w-full h-full p-4">
+    <Card className="bg-white dark:bg-stone-800 rounded-xl w-full h-full p-4">
       {/* TITLE */}
       <div className="flex justify-between items-center">
         <h1 className="text-lg font-semibold">Student Ratio</h1>

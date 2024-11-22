@@ -35,7 +35,7 @@ const Hero = () => {
             >
                 <Badge
                     variant="outline"
-                    className="px-4 py-1 rounded-full text-sm lg:text-lg animate-fade-in border-blue-500 text-blue-600"
+                    className="px-4 py-1 rounded-full text-sm lg:text-md animate-fade-in border-blue-500 text-blue-600 dark:text-lamaGreenLight dark:border-white"
                 >
                     Transforming Education
                 </Badge>
