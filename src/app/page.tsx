@@ -39,7 +39,7 @@ const Homepage = () => {
   ]
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden z-0">
+    <div className="relative min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden z-0">
       <BackgroundAnimation />
       <Navbar />
       <Hero />
