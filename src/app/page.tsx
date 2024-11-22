@@ -43,7 +43,7 @@ const Homepage = () => {
       <BackgroundAnimation />
       <Navbar />
       <Hero />
-      <div className="container h-svh mx-auto px-4 py-12 space-y-24">
+      <div className="container min-h-svh mx-auto px-4 py-12 space-y-24">
         <StatCards stats={stats} />
         <DashboardCards dashboards={dashboards} />
         <div id="features">
