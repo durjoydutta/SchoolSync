@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { MoreHorizontal } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const data = [ // Data for the chart
@@ -28,7 +29,7 @@ const RatioChart = () => {
       {/* TITLE */}
       <div className="flex justify-between items-center">
         <h1 className="text-lg font-semibold">Student Ratio</h1>
-        <Image src="/moreDark.png" alt="" width={20} height={20} />
+        <MoreHorizontal className="h-8 w-8 text-gray-500"/>
       </div>
       {/* CHART */}
       <div className="relative w-full h-[75%]">

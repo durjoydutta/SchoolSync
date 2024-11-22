@@ -8,7 +8,7 @@ import DashboardCards from "@/components/home/DashboardCards"
 import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/navbar/MainNavbar"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 const Homepage = () => {
@@ -43,7 +43,7 @@ const Homepage = () => {
       <BackgroundAnimation />
       <Navbar />
       <Hero />
-      <div className="container mx-auto px-4 py-12 space-y-24">
+      <div className="container min-h-svh mx-auto px-4 py-12 space-y-24">
         <StatCards stats={stats} />
         <DashboardCards dashboards={dashboards} />
         <div id="features">
