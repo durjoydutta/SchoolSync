@@ -8,7 +8,7 @@ import DashboardCards from "@/components/home/DashboardCards"
 import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/MainNavbar"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 const Homepage = () => {

@@ -1,22 +1,14 @@
 "use client"
-import { LogIn, Menu, X, ChevronDown } from 'lucide-react';
+import { LogIn, Menu, X, ChevronDown} from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SchoolSyncLogo from "@/components/SchoolSyncLogo"
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 import { useState, useEffect } from "react";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-    DropdownMenuShortcut,
-} from "@/components/ui/dropdown-menu"
 import DarkModeSwitch from "@/components/DarkModeSwitch";
+import UserDropDown from "@/components/UserDropDown"  ;
+import AppNavigationMenu from '@/components/AppNavigationMenu';
 
 const data = {
     user: {
@@ -54,27 +46,7 @@ const Navbar = () => {
             </Button>
         </Link>
         ) : (
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                    <Button variant="ddc" className="w-full justify-start ">
-                        <Avatar className="mt-[2px]">
-                            <AvatarImage src={data.user.avatar} alt="User avatar" />
-                            <AvatarFallback>DP</AvatarFallback>
-                        </Avatar>
-                        <ChevronDown className="ml-auto h-4 w-4" />
-                    </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="z-[1000]">
-                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Profile</DropdownMenuItem>
-                    <DropdownMenuItem>Settings
-                        <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>Support</DropdownMenuItem>
-                    <DropdownMenuItem>Log out</DropdownMenuItem>
-                </DropdownMenuContent>
-            </DropdownMenu>
+            <UserDropDown user={data.user}/>
         )
 
     return (
@@ -85,8 +57,9 @@ const Navbar = () => {
             className="fixed top-0 left-0 right-0 bg-none backdrop-blur-md shadow-md py-4 px-6 z-[999]"
         >
             <BackgroundAnimation />
-            <nav className="flex justify-between items-center mx-auto">
+            <nav className="flex justify-between items-center flex-grow">
                 <SchoolSyncLogo />
+                <AppNavigationMenu/>
                 <div className="flex justify-end items-center">
                     <DarkModeSwitch />
                     {navLoggedInStatus()}
