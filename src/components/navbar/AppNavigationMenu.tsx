@@ -54,16 +54,10 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-const scrollToFeatures = () => {
-  const featuresSection = document.getElementById('features')
-  if (featuresSection) {
-    featuresSection.scrollIntoView({ behavior: 'smooth' })
-  }
-}
 
 export default function AppNavigationMenu() {
   return (
-    <NavigationMenu className="hidden lg:flex w-full">
+    <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger >Menu</NavigationMenuTrigger>
@@ -86,11 +80,11 @@ export default function AppNavigationMenu() {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/" title="About">
-              Learn abut our comprehensive platform that seamlessly connects teachers, students, and parents.
+                Learn abut our comprehensive platform that seamlessly connects teachers, students, and parents.
               </ListItem>
-              <ListItem href="/" title="Features" onClick={scrollToFeatures}>
-                Learn about the incredible features of SchoolSync
-              </ListItem>
+                <ListItem href="#features" title="Features">
+                  Learn about the incredible features of SchoolSync
+                </ListItem>
               <ListItem href="/" title="Get Started">
                 How to get started with out app.
               </ListItem>

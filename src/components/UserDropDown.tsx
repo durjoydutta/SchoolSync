@@ -37,7 +37,7 @@ const UserDropDown = ({user} : UserProps) => {
             <DropdownMenuContent align="end" className="z-[1000]">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Notifications</DropdownMenuItem>
                 <DropdownMenuItem>Settings
                     <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                 </DropdownMenuItem>

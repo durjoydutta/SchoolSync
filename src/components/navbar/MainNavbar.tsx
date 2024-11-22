@@ -1,5 +1,5 @@
 "use client"
-import { LogIn, Menu, X, ChevronDown} from 'lucide-react';
+import { LogIn, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SchoolSyncLogo from "@/components/SchoolSyncLogo"
@@ -7,8 +7,14 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 import { useState, useEffect } from "react";
 import DarkModeSwitch from "@/components/DarkModeSwitch";
-import UserDropDown from "@/components/UserDropDown"  ;
-import AppNavigationMenu from '@/components/AppNavigationMenu';
+import UserDropDown from "@/components/UserDropDown";
+import AppNavigationMenu from '@/components/navbar/AppNavigationMenu';
+import {
+    SidebarTrigger,
+} from "@/components/ui/sidebar"
+import {
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 const data = {
     user: {
@@ -46,7 +52,7 @@ const Navbar = () => {
             </Button>
         </Link>
         ) : (
-            <UserDropDown user={data.user}/>
+            <UserDropDown user={data.user} />
         )
 
     return (
@@ -55,15 +61,18 @@ const Navbar = () => {
             animate={{ y: isVisible ? 0 : -100 }}
             transition={{ duration: 0.3 }}
             id="navbar"
-            className="fixed top-0 left-0 right-0 bg-none backdrop-blur-md shadow-md py-4 px-6 z-[999]"
+            className="fixed top-0 right-0 md:static w-full backdrop-blur-md shadow-md py-4 px-6 sm:px-4 z-10"
         >
             <BackgroundAnimation />
-            <nav className="flex justify-between items-center flex-grow">
-                <SchoolSyncLogo />
-                <AppNavigationMenu/>
-                <div className="flex justify-end items-center">
+            <nav className="flex justify-between items-center">
+                <div className="flex gap-2">
+                    <SidebarTrigger className="" />
+                    <BreadcrumbSeparator className="hidden md:block" />
+                    <AppNavigationMenu />
+                </div>
+                <div className="flex justify-end items-center gap-2">
                     <DarkModeSwitch />
-                    {navLoggedInStatus()}
+                    <div className="hidden sm:block mt-1">{navLoggedInStatus()}</div>
                 </div>
             </nav>
         </motion.header>
