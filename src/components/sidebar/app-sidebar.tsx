@@ -66,7 +66,7 @@ const data = {
       items: [
         {
           title: "All Teachers",
-          url: "/teachers/all",
+          url: "/list/teachers",
         },
         {
           title: "Schedules",
