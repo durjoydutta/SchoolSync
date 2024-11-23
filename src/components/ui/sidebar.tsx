@@ -282,17 +282,20 @@ const SidebarTrigger = React.forwardRef<
       }}
       {...props}
     >
-      {state === "expanded" ? (
-        <ChevronLeft className="h-6 w-6 transition-transform duration-300" />
-      ) : (
-        <ChevronRight className="h-6 w-6 transition-transform duration-300" />
-      )}
-      <PanelLeft />
+      <PanelLeft size={32} />
+      <ChevronLeft
+        className={cn(
+          "h-6 w-6 transform transition-transform duration-300 ease-in-out",
+          state === "collapsed" ? "rotate-180" : "rotate-0"
+        )}
+      />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
 });
 SidebarTrigger.displayName = "SidebarTrigger";
+
+
 
 
 const SidebarRail = React.forwardRef<
