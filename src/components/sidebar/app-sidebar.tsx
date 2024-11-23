@@ -46,16 +46,20 @@ const data = {
       icon: Users,
       items: [
         {
-          title: "All Students",
-          url: "/students/all",
+          title: "Students List",
+          url: "/list/students",
         },
         {
-          title: "Admissions",
-          url: "/students/admissions",
+          title: "Parents List",
+          url: "/list/parents",
+        },
+        {
+          title: "Attendance",
+          url: "/",
         },
         {
           title: "Performance",
-          url: "/students/performance",
+          url: "/",
         },
       ],
     },
@@ -66,7 +70,7 @@ const data = {
       items: [
         {
           title: "All Teachers",
-          url: "/teachers/all",
+          url: "/list/teachers",
         },
         {
           title: "Schedules",
@@ -85,15 +89,15 @@ const data = {
       items: [
         {
           title: "Class Timetable",
-          url: "/classes/timetable",
+          url: "/admin",
         },
         {
           title: "Attendance",
-          url: "/classes/attendance",
+          url: "/",
         },
         {
           title: "Assignments",
-          url: "/classes/assignments",
+          url: "/",
         },
       ],
     },

@@ -1,2 +1,2 @@
 SELECT *
-FROM "Admin"
+FROM "Student" LIMIT(5)
