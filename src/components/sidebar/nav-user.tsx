@@ -7,6 +7,7 @@ import {
   CreditCard,
   LogOut,
   Sparkles,
+  Settings
 } from "lucide-react"
 
 import {
@@ -93,11 +94,11 @@ export function NavUser({
                 Account
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <CreditCard />
+                <Bell />
                 Notifications
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Bell />
+                <Settings />
                 Settings
               </DropdownMenuItem>
             </DropdownMenuGroup>
