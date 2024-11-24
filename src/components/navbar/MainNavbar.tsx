@@ -44,7 +44,7 @@ const Navbar = () => {
     })
 
     const navLoggedInStatus = () => !isLoggedIn ?
-        (<Link href={"/login"}>
+        (<Link href={"/auth"}>
             <Button className="mb-1 ml-3 -mr-2 relative w-3/4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
                 <LogIn className="w-1/2 h-full" />
                 Login
@@ -63,14 +63,14 @@ const Navbar = () => {
         >
             <BackgroundAnimation />
             <nav className="flex justify-between items-center">
-                <div className="flex items-center gap-2">                    
+                <div className="flex items-center gap-2">
                     <SidebarTrigger className="" />
                     <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
                     <AppNavigationMenu />
                 </div>
                 <div className="flex justify-end items-center">
                     <DarkModeSwitch />
-                    <div className="sm:block mt-1">{navLoggedInStatus()}</div>
+                    <div className="mt-1">{navLoggedInStatus()}</div>
                 </div>
             </nav>
         </motion.header>

@@ -13,32 +13,32 @@ const Hero = () => {
             className="hero h-dvh md:pb-[10rem] flex flex-col justify-center items-center text-center gap-4 px-4"
         >
             <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{
-                    scale: 1,
                     opacity: 1,
-                    boxShadow: [
-                        '0 0 5px theme(colors.blue.500)',
-                        '0 0 10px theme(colors.blue.500)',
-                        '0 0 15px theme(colors.blue.500)',
-                        '0 0 20px theme(colors.blue.500)',
-                        '0 0 10px theme(colors.blue.500)'
-                    ]
+                    y: 0,
                 }}
                 transition={{
-                    duration: 1.5,
+                    duration: 0.5,
                     delay: 0.2,
-                    repeat: Infinity,
-                    repeatType: 'reverse',
-                    type: 'tween'
                 }}
-                className="rounded-full"
             >
                 <Badge
-                    variant="outline"
-                    className="px-4 py-1 rounded-full text-sm lg:text-md animate-fade-in border-blue-500 text-blue-600 dark:text-lamaGreenLight dark:border-white"
+                    variant="secondary"
+                    className="px-3 py-1 text-xs lg:text-sm font-medium bg-smoke-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 rounded-md border-none"
                 >
-                    Transforming Education
+                    <motion.span
+                        animate={{
+                            opacity: [0.7, 1, 0.7],
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                    >
+                        Transforming Education
+                    </motion.span>
                 </Badge>
             </motion.div>
 
