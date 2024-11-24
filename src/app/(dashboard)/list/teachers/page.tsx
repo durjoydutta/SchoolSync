@@ -77,8 +77,8 @@ const TeacherList = () => {
             <td className="hidden md:table-cell">{item.teacherId}</td>
             <td className="hidden md:table-cell">{item.subjects.join(",")}</td>
             <td className="hidden md:table-cell">{item.classes.join(",")}</td>
-            <td className="hidden md:table-cell">{item.phone}</td>
-            <td className="hidden md:table-cell">{item.address}</td>
+            <td className="hidden lg:table-cell">{item.phone}</td>
+            <td className="hidden lg:table-cell">{item.address}</td>
             <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky dark:bg-sky-300">
