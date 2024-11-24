@@ -11,6 +11,7 @@ import {
   LifeBuoy,
   Send,
   Command,
+  UsersRound,
 } from "lucide-react";
 
 import { NavMain } from "@/components/sidebar/nav-main";
@@ -47,7 +48,7 @@ const data = {
       items: [
         {
           title: "All Students",
-          url: "/students/all",
+          url: "/list/students",
         },
         {
           title: "Admissions",
@@ -66,7 +67,7 @@ const data = {
       items: [
         {
           title: "All Teachers",
-          url: "/teachers/all",
+          url: "/list/teachers",
         },
         {
           title: "Schedules",
@@ -79,21 +80,44 @@ const data = {
       ],
     },
     {
-      title: "Classes",
-      url: "/",
+      title: "Parents",
+      url: "/parents",
+      icon: UsersRound,
+      items: [
+        {
+          title: "All Parents",
+          url: "/list/parents",
+        },
+        {
+          title: "Reports",
+          url: "/teachers/reports",
+        },
+      ],
+    },
+    {
+      title: "Academics",
+      url: "/list/classes",
       icon: Calendar,
       items: [
         {
-          title: "Class Timetable",
-          url: "/classes/timetable",
+          title: "Classes",
+          url: "/list/classes",
         },
         {
-          title: "Attendance",
-          url: "/classes/attendance",
+          title: "Lessons",
+          url: "/list/lessons",
         },
         {
           title: "Assignments",
-          url: "/classes/assignments",
+          url: "/list/assignments",
+        },
+        {
+          title: "Exams",
+          url: "/list/exams",
+        },
+        {
+          title: "Results",
+          url: "/list/results",
         },
       ],
     },
