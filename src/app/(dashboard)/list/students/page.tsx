@@ -76,12 +76,12 @@ const StudentList = () => {
             <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky dark:bg-sky-300">
-              <Image src="/eye.png" alt="" width={16} height={16} className='dark:bg-sky-300' />
+              <Image src="/assets/eye.png" alt="" width={16} height={16} className='dark:bg-sky-300' />
             </button>
           </Link>
           {role === "admin" && (
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple dark:bg-purple-300">
-              <Image src="/delete.png" alt="" width={16} height={16} />
+              <Image src="/assets/delete.png" alt="" width={16} height={16} />
             </button>
           )}
         </div>
@@ -99,13 +99,13 @@ const StudentList = () => {
             <TableSearch />
             <div className="flex items-center gap-4 self-end">
                 <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
-                    <Image src='/filter.png' alt="filter button" width={14} height={14} />
+                    <Image src='/assets/filter.png' alt="filter button" width={14} height={14} />
                 </button>                
                 <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
-                    <Image src='/sort.png' alt="filter button" width={14} height={14} />
+                    <Image src='/assets/sort.png' alt="filter button" width={14} height={14} />
                 </button>                
                 {role==='admin' && <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
-                    <Image src='/plus.png' alt="filter button" width={14} height={14} />
+                    <Image src='/assets/plus.png' alt="filter button" width={14} height={14} />
                 </button>}
             </div>
             </div>
