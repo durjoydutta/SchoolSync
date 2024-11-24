@@ -47,7 +47,7 @@ const data = {
       items: [
         {
           title: "All Students",
-          url: "/students/all",
+          url: "/list/students",
         },
         {
           title: "Admissions",

@@ -110,9 +110,9 @@ const TeacherList = () => {
                 <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
                     <Image src='/sort.png' alt="filter button" width={14} height={14} />
                 </button>                
-                <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
+                {role==="admin" && <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
                     <Image src='/plus.png' alt="filter button" width={14} height={14} />
-                </button>
+                </button>}
             </div>
             </div>
         </div>
