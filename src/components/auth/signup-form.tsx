@@ -130,6 +130,7 @@ export default function SignupForm({ onToggle }: SignupFormProps) {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="border-gray-700 dark:border-white"
               required
             />
           </div>
@@ -148,6 +149,7 @@ export default function SignupForm({ onToggle }: SignupFormProps) {
               placeholder="Enter the OTP sent to your email"
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
+              className="border-gray-700 dark:border-white"
               required
             />
           </div>
@@ -166,6 +168,7 @@ export default function SignupForm({ onToggle }: SignupFormProps) {
               placeholder="Create a strong password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="border-gray-700 dark:border-white"
               required
             />
           </div>

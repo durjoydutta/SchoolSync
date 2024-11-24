@@ -37,6 +37,7 @@ export default function LoginForm({ onToggle }: LoginFormProps) {
                         placeholder="Enter your email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className="border-gray-700 dark:border-white"
                         required
                     />
                 </div>
@@ -48,12 +49,13 @@ export default function LoginForm({ onToggle }: LoginFormProps) {
                         placeholder="Enter your password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        className="border-gray-700 dark:border-white"
                         required
                     />
                 </div>
                 <Button type="submit" className="w-full">Log in</Button>
             </form>
-            <p className="flex gap-2  justify-center items-center mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
+            <p className="flex gap-2  justify-center items-center mt-4 text-center text-sm">
                 Don&apos;t have an account?
                 <button onClick={onToggle} className="text-primary hover:underline">
                     Sign up

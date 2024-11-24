@@ -4,14 +4,6 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider"
 import { AppSidebar } from "@/components/sidebar/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
@@ -44,7 +36,7 @@ export default function RootLayout({
           <SidebarProvider>
             <AppSidebar/>
             <SidebarInset>
-              <main className="flex flex-col antialiased">
+              <main className="flex flex-col antialiased bg-gradient-to-br from-indigo-200 to-indigo-700 dark:from-black dark:to-indigo-800">
               <BackgroundAnimation />
                 {children}
                 <Footer />
