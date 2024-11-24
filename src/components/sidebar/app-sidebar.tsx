@@ -46,11 +46,11 @@ const data = {
       icon: Users,
       items: [
         {
-          title: "Students List",
+          title: "List of Students",
           url: "/list/students",
         },
         {
-          title: "Parents List",
+          title: "List of Parents",
           url: "/list/parents",
         },
         {
@@ -69,7 +69,7 @@ const data = {
       icon: School,
       items: [
         {
-          title: "All Teachers",
+          title: "List of Teachers",
           url: "/list/teachers",
         },
         {
