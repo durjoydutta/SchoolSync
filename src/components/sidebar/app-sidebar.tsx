@@ -12,6 +12,7 @@ import {
   LifeBuoy,
   Send,
   Command,
+  UsersRound,
 } from "lucide-react";
 
 import { NavMain } from "@/components/sidebar/nav-main";
@@ -91,8 +92,23 @@ const data = {
       ],
     },
     {
-      title: "Classes",
-      url: "/",
+      title: "Parents",
+      url: "/parents",
+      icon: UsersRound,
+      items: [
+        {
+          title: "All Parents",
+          url: "/list/parents",
+        },
+        {
+          title: "Reports",
+          url: "/teachers/reports",
+        },
+      ],
+    },
+    {
+      title: "Academics",
+      url: "/list/classes",
       icon: Calendar,
       items: [
         {

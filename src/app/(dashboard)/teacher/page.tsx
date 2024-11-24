@@ -1,8 +1,8 @@
+
 import Announcements from "@/components/dashboard/Announcements";
 import EventCalendar from "@/components/dashboard/EventCalendar";
 import BigCalendar from '@/components/dashboard/BigCalendar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
 
 const StudentPanel = () => {
   return (
