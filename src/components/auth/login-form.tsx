@@ -53,8 +53,8 @@ export default function LoginForm({ onToggle }: LoginFormProps) {
                 </div>
                 <Button type="submit" className="w-full">Log in</Button>
             </form>
-            <p className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
-                Don't have an account?{" "}
+            <p className="flex gap-2  justify-center items-center mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
+                Don't have an account?
                 <button onClick={onToggle} className="text-primary hover:underline">
                     Sign up
                 </button>

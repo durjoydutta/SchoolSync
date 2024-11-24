@@ -72,12 +72,12 @@ export default function AuthLayout() {
                     transition={{ delay: 0.3, duration: 0.5 }}
                 >
                     <p className="text-white text-2xl font-semibold text-center leading-relaxed shadow-text">
-                        Experience the future of education management with our comprehensive platform that seamlessly connects teachers, students, and parents.
+                        Experience the future of education with our comprehensive platform that seamlessly connects Teachers, Students, and Parents.
                     </p>
                 </motion.div>
             </div>
             <motion.div 
-                className="absolute top-10 right-2 transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-[1.3rem] right-7 transform -translate-x-1/2 -translate-y-1/2"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4, duration: 0.3 }}

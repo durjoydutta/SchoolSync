@@ -66,7 +66,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="mt-8 text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl lg:max-w-4xl mx-auto"
             >
-                Experience the future of education management with our comprehensive platform that seamlessly connects teachers, students, and parents.
+                Experience the future of education with our comprehensive platform that seamlessly connects Teachers, Students, and Parents.
             </motion.p>
         </motion.div>
     )
