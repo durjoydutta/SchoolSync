@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const StudentPanel = () => {
   return (
+    {/* LEFT */}
     <div className="flex gap-4 flex-col lg:flex-row w-full">
       <Card className="w-full xl:w-2/3 flex flex-col flex-grow gap-4">
         <CardContent className="h-full dark:bg-stone-800 p-4 rounded-xl">
