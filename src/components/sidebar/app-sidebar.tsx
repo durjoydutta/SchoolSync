@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import {
+  House,
   BookOpen,
   User,
   Users,
@@ -34,9 +35,16 @@ const data = {
   },
   navMain: [
     {
+      title: "Home",
+      url: "/",
+      icon: House,
+      isActive: true,
+      items: [],
+    },
+    {
       title: "Dashboard",
       url: "/admin",
-      icon: BookOpen,
+      icon: School,
       isActive: true,
       items: [],
     },
@@ -66,7 +74,7 @@ const data = {
     {
       title: "Teachers",
       url: "/teacher",
-      icon: School,
+      icon: User,
       items: [
         {
           title: "List of Teachers",
@@ -137,8 +145,8 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar variant="inset" {...props}>
-      <SidebarHeader>
+    <Sidebar variant="sidebar" {...props}>
+      <SidebarHeader className="pt-[1.3rem]">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>

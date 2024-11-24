@@ -6,7 +6,8 @@ export default function AuthLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="relative bg-none min-h-max w-screen overflow-hidden flex p-3 z-0">
+        <div className="relative bg-gradient-to-br from-blue-300/50 to-indigo-200/50 dark:from-gray-900/70 dark:to-indigo-700
+                        min-h-max w-screen overflow-hidden flex p-3 z-0">
             <div className="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-2">
                     <div className="relative w-10 h-10">
@@ -16,7 +17,7 @@ export default function AuthLayout({
                             fill
                             className="object-contain"
                             priority
-                        />
+                        />      
                     </div>
                     <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                         SchoolSync

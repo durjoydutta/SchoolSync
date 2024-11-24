@@ -82,7 +82,7 @@ export default function AppNavigationMenu() {
               <ListItem href="/" title="About">
                 Learn abut our comprehensive platform that seamlessly connects teachers, students, and parents.
               </ListItem>
-                <ListItem href="#features" title="Features">
+                <ListItem href="#hero" title="Features">
                   Learn about the incredible features of SchoolSync
                 </ListItem>
               <ListItem href="/" title="Get Started">
@@ -95,7 +95,7 @@ export default function AppNavigationMenu() {
         <NavigationMenuItem>
           <Link href="/admin" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Your Dashboard
+              Dashboard
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

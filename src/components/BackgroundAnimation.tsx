@@ -27,7 +27,7 @@ const BackgroundAnimation = () => (
           repeatType: "reverse",
         }}
       />
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-xl"
         animate={{
           x: [0, 50, 0],
@@ -38,7 +38,7 @@ const BackgroundAnimation = () => (
           repeat: Infinity,
           repeatType: "reverse",
         }}
-      />
+      /> */}
     </div>
   )
 

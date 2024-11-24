@@ -23,7 +23,7 @@ import { Label } from "@/components/ui/label"
 
 export default function CardsCreateAccount() {
   return (
-    <Card>
+    <Card className="bg-white dark:bg-black shadow-xl shadow-indigo-600/50 dark:shadow-gray-500 rounded-lg">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl">Create an account</CardTitle>
         <CardDescription>

@@ -25,7 +25,7 @@ const data = {
 }
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(true) // This should be replaced with actual auth logic
+    const [isLoggedIn, setIsLoggedIn] = useState(false) // This should be replaced with actual auth logic
     const [userRole, setUserRole] = useState('student')
     const [isVisible, setIsVisible] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
@@ -45,8 +45,8 @@ const Navbar = () => {
 
     const navLoggedInStatus = () => !isLoggedIn ?
         (<Link href={"/login"}>
-            <Button className="w-20 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
-                <LogIn className="w-full h-full mr-2" />
+            <Button className="mb-1 ml-3 -mr-2 relative w-3/4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
+                <LogIn className="w-1/2 h-full" />
                 Login
             </Button>
         </Link>
@@ -59,14 +59,13 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: isVisible ? 0 : -100 }}
             transition={{ duration: 0.3 }}
-            id="navbar"
             className="fixed top-0 right-0 md:static w-full backdrop-blur-md shadow-md py-4 pl-6 pr-2 sm:px-4 z-10"
         >
             <BackgroundAnimation />
             <nav className="flex justify-between items-center">
                 <div className="flex items-center gap-2">                    
                     <SidebarTrigger className="" />
-                    <Separator orientation="vertical" className="mr-2 h-4" />
+                    <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
                     <AppNavigationMenu />
                 </div>
                 <div className="flex justify-end items-center">

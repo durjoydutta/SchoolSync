@@ -18,6 +18,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +45,7 @@ export default function RootLayout({
             <AppSidebar/>
             <SidebarInset>
               <main className="flex flex-col antialiased">
+              <BackgroundAnimation />
                 {children}
                 <Footer />
               </main>
