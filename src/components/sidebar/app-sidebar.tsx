@@ -37,16 +37,9 @@ const data = {
   },
   navMain: [
     {
-      title: "Home",
-      url: "/",
-      icon: House,
-      isActive: true,
-      items: [],
-    },
-    {
       title: "Dashboard",
       url: "/admin",
-      icon: School,
+      icon: BookOpen,
       isActive: true,
       items: [],
     },
@@ -56,30 +49,26 @@ const data = {
       icon: Users,
       items: [
         {
-          title: "List of Students",
+          title: "All Students",
           url: "/list/students",
         },
         {
-          title: "List of Parents",
-          url: "/list/parents",
-        },
-        {
-          title: "Attendance",
-          url: "/",
+          title: "Admissions",
+          url: "/students/admissions",
         },
         {
           title: "Performance",
-          url: "/",
+          url: "/students/performance",
         },
       ],
     },
     {
       title: "Teachers",
       url: "/teacher",
-      icon: User,
+      icon: School,
       items: [
         {
-          title: "List of Teachers",
+          title: "All Teachers",
           url: "/list/teachers",
         },
         {
@@ -113,16 +102,24 @@ const data = {
       icon: Calendar,
       items: [
         {
-          title: "Class Timetable",
-          url: "/admin",
+          title: "Classes",
+          url: "/list/classes",
         },
         {
-          title: "Attendance",
-          url: "/",
+          title: "Lessons",
+          url: "/list/lessons",
         },
         {
           title: "Assignments",
-          url: "/",
+          url: "/list/assignments",
+        },
+        {
+          title: "Exams",
+          url: "/list/exams",
+        },
+        {
+          title: "Results",
+          url: "/list/results",
         },
       ],
     },
