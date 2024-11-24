@@ -24,8 +24,8 @@ const chartData = [
 ]
 
 const chartConfig = {
-    count: {
-        label: "Count",
+    Participants: {
+        label: "Students",
     },
     Male: {
         label: "Male",
@@ -86,7 +86,7 @@ export default function MaleFemaleRatioPieChart() {
                     }
                 </div>
                 <div className="leading-none text-muted-foreground">
-                    Total participants: {totalCount}
+                    Total {chartConfig.Participants.label}: {totalCount}
                 </div>
             </CardFooter>
         </Card>

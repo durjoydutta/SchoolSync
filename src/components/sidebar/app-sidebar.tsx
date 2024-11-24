@@ -36,14 +36,14 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/dashboard",
-      icon: User,
+      url: "/admin",
+      icon: BookOpen,
       isActive: true,
       items: [],
     },
     {
       title: "Students",
-      url: "/students",
+      url: "/student",
       icon: Users,
       items: [
         {
@@ -62,7 +62,7 @@ const data = {
     },
     {
       title: "Teachers",
-      url: "/teachers",
+      url: "/teacher",
       icon: School,
       items: [
         {
@@ -162,7 +162,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <a href="/">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Command className="size-4" />
                 </div>
