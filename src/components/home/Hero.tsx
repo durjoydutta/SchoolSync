@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Badge } from "@/components/ui/badge"
+import BackgroundAnimation from '../BackgroundAnimation'
 
 const Hero = () => {
     return (
@@ -10,8 +11,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             id='hero'
-            className="hero h-dvh md:pb-[10rem] flex flex-col justify-center items-center text-center gap-4 px-4"
+            className="relative hero h-svh md:pb-[10rem] flex flex-col justify-center items-center text-center gap-4 px-4"
         >
+            {/* <div className="hidden md:block"><BackgroundAnimation /></div> */}
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{
@@ -55,7 +57,7 @@ const Hero = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-800 dark:text-gray-100"
+                className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-800 dark:text-gray-100"
             >
                 Next-Gen School Management
             </motion.p>

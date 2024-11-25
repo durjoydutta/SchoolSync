@@ -9,7 +9,6 @@ import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
 import Navbar from "@/components/navbar/MainNavbar"
-import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 const Homepage = () => {
   const controls = useAnimation()
@@ -39,8 +38,7 @@ const Homepage = () => {
   ]
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden z-0">
-      <BackgroundAnimation />
+    <div className="relative min-h-screen w-full overflow-hidden">
       <Navbar />
       <Hero />
       <div className="container min-h-svh mx-auto px-4 py-12 space-y-24">

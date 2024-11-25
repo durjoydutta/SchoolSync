@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -11,7 +12,6 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,12 +35,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <AppSidebar/>
+            <AppSidebar />
             <SidebarInset>
-              <main className="flex flex-col antialiased bg-gradient-to-br from-indigo-200 to-indigo-700 dark:from-black dark:to-indigo-800">
-              <BackgroundAnimation />
+              <main className="relative flex flex-col antialiased bg-gradient-to-br from-indigo-200 to-indigo-700 dark:from-black dark:to-indigo-800">
                 {children}
                 <Analytics />
+                <SpeedInsights />
                 <Footer />
               </main>
             </SidebarInset>

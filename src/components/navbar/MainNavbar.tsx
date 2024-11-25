@@ -59,9 +59,8 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: isVisible ? 0 : -100 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 md:static w-full backdrop-blur-md shadow-md py-4 pl-6 pr-2 sm:px-4 z-10"
+            className="fixed top-0 right-0 md:sticky w-full backdrop-blur-sm shadow-lg bg-indigo-600/10 py-4 pl-6 pr-2 sm:px-4 z-10"
         >
-            <BackgroundAnimation />
             <nav className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
                     <SidebarTrigger className="" />
