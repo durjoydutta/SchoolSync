@@ -62,7 +62,7 @@ export default function AuthLayout() {
             {/* RIGHT */}
             <div className="relative hidden bg-muted md:block">
                 <Image
-                    src="/assets/school-supplies.png"
+                    src="/assets/school-supplies.jpg"
                     alt="login-page-image"
                     fill
                     className="absolute inset-0 object-cover dark:brightness-[0.2] grayscale-[30%] dark:grayscale-[95%]"
