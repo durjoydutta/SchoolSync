@@ -62,7 +62,7 @@ const AssignmentList = () => {
           </Link>
           {role === "admin" && (
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple dark:bg-purple-300">
-              <Image src="/delete.png" alt="" width={16} height={16} />
+              <Image src="/assets/delete.png" alt="" width={16} height={16} />
             </button>
           )}
         </div>
