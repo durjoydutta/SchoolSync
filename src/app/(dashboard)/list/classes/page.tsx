@@ -6,7 +6,7 @@ import TableSearch from '@/components/TableSearch'
 import { classesData, role } from '@/lib/data';
 import React from 'react'
 import Link from "next/link";
-import { UserRoundPen, ArrowDownWideNarrow, Search, Filter, Trash2 } from 'lucide-react';
+import { Pencil , ArrowDownWideNarrow, Search, Filter, Trash2 } from 'lucide-react';
 
 type Class = {
   id: number;
@@ -61,7 +61,7 @@ const ParentList = () => {
           <Link href={`/list/teachers/${item.id}`}>
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaSky dark:bg-sky-300">
               {/* <Image src="/assets/edit.png" alt="" width={16} height={16} className='dark:bg-sky-300' /> */}
-              <UserRoundPen />
+              <Pencil />
             </button>
           </Link>
           {role === "admin" && (
