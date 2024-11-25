@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/next';
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -39,6 +40,7 @@ export default function RootLayout({
               <main className="flex flex-col antialiased bg-gradient-to-br from-indigo-200 to-indigo-700 dark:from-black dark:to-indigo-800">
               <BackgroundAnimation />
                 {children}
+                <Analytics />
                 <Footer />
               </main>
             </SidebarInset>
