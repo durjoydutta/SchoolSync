@@ -51,10 +51,10 @@ const AssignmentList = () => {
           <h3 className="font-semibold">{item.subject}</h3>
         </div>
       </td>
+      <td >{item.class}</td>
+      <td className="hidden md:table-cell">{item.teacher}</td>
+      <td className="hidden md:table-cell">{item.dueDate}</td>
       <td>
-        <td >{item.class}</td>
-        <td className="hidden md:table-cell">{item.teacher}</td>
-        <td className="hidden md:table-cell">{item.dueDate}</td>
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaSky dark:bg-sky-300">
