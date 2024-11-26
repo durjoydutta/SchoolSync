@@ -57,19 +57,19 @@ const Navbar = () => {
     return (
         <motion.header
             initial={{ y: -100 }}
-            animate={{ y: isVisible ? 0 : 0 }}
+            animate={{ y: isVisible ? 0 : -100 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 md:sticky w-full backdrop-blur-sm shadow-lg bg-indigo-600/10 py-4 pl-2 pr-2 sm:px-4 z-10"
+            className="fixed top-0 right-0 md:sticky w-full backdrop-blur-sm shadow-lg bg-indigo-600/10 py-4 pl-6 pr-2 sm:px-4 z-10"
         >
             <nav className="flex justify-between items-center">
-                <div className="flex items-center gap-2">                    
-                    <div className="mt-1">{navLoggedInStatus()}</div>
+                <div className="flex items-center gap-2">
+                    <SidebarTrigger className="" />
                     <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
                     <AppNavigationMenu />
                 </div>
-                <div className="flex justify-end items-center gap-2">
+                <div className="flex justify-end items-center">
                     <DarkModeSwitch />
-                    <SidebarTrigger className="" />
+                    <div className="mt-1">{navLoggedInStatus()}</div>
                 </div>
             </nav>
         </motion.header>
@@ -77,4 +77,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
