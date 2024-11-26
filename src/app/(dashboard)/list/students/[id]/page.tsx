@@ -20,7 +20,7 @@ const SingleStudentPage = async ({
   })
   
   return (
-    <div className="flex flex-col justify-center items-center h-svh gap-4">
+    <div key={id} className="flex flex-col justify-center items-center h-svh gap-4">
       <div className="">Student Name: {student?.name}</div>
       <div className="">Parent Name: {student?.parent.name}</div>
       <div className="">Class Name: {student?.class.name}</div>
