@@ -2,29 +2,26 @@ import { Day, PrismaClient, UserSex } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-
     // ADMINS
     const adminData = [
         {
-            "username": "ddc",
-            "email": "contact.durjoy@gmail.com",
-            "phone": null,
-            "password": "ddc@schoolsync",
-            "name": "Durjoy",
-            "surname": "Dutta C",
+            username: "durjoydc",
+            email: "durjoy.dutta@gmail.com",
+            phone: "9876543210",
+            name: "Durjoy",
+            surname: "Dutta",
         },
         {
-            "username": "eu",
-            "email": "eahtashamummam@gmail.com",
-            "phone": null,
-            "password": "eu@schoolsync",
-            "name": "Eahtasham",
-            "surname": "Ummam",
-        }
-    ]
+            username: "eahtashamummam",
+            email: "eahtasham.ummam@gmail.com",
+            phone: "9123456789",
+            name: "Eahtasham",
+            surname: "Ummam",
+        },
+    ];
 
     for (const admin of adminData) {
-        await prisma.admin.create({ data: admin })
+        await prisma.admin.create({ data: admin });
     }
 
     // GRADE
@@ -42,7 +39,7 @@ async function main() {
             data: {
                 name: `${i}A`,
                 gradeId: i,
-                capacity: Math.floor(Math.random() * (20 - 15 + 1)) + 15,
+                capacity: Math.floor(Math.random() * (30 - 20 + 1)) + 20,
             },
         });
     }
@@ -66,20 +63,38 @@ async function main() {
     }
 
     // TEACHER
+    const teacherNames = [
+        { name: "Arun", surname: "Sharma" },
+        { name: "Pooja", surname: "Mehta" },
+        { name: "Raj", surname: "Kumar" },
+        { name: "Anjali", surname: "Verma" },
+        { name: "Suresh", surname: "Rana" },
+        { name: "Kiran", surname: "Desai" },
+        { name: "Amit", surname: "Singh" },
+        { name: "Priya", surname: "Patil" },
+        { name: "Ravi", surname: "Malhotra" },
+        { name: "Neha", surname: "Bose" },
+        { name: "Vikas", surname: "Yadav" },
+        { name: "Swati", surname: "Chawla" },
+        { name: "Manoj", surname: "Agarwal" },
+        { name: "Sonal", surname: "Pandey" },
+        { name: "Vivek", surname: "Joshi" },
+    ];
+
     for (let i = 1; i <= 15; i++) {
         await prisma.teacher.create({
             data: {
                 username: `teacher${i}`,
-                name: `TName${i}`,
-                surname: `TSurname${i}`,
-                email: `teacher${i}@example.com`,
-                phone: `123-456-789${i}`,
-                address: `Address${i}`,
-                bloodType: "A+",
+                name: teacherNames[i - 1].name,
+                surname: teacherNames[i - 1].surname,
+                email: `teacher${i}@school.com`,
+                phone: `91${9000000000 + i}`, // Unique phone numbers
+                address: `House No ${i}, Block ${i % 5}, Sector ${i + 5}, Delhi`,
+                bloodType: i % 2 === 0 ? "B+" : "O-",
                 sex: i % 2 === 0 ? UserSex.MALE : UserSex.FEMALE,
                 subjects: { connect: [{ id: (i % 10) + 1 }] },
                 classes: { connect: [{ id: (i % 6) + 1 }] },
-                birthday: new Date(new Date().setFullYear(new Date().getFullYear() - 30)),
+                birthday: new Date(new Date().setFullYear(new Date().getFullYear() - (25 + i))),
             },
         });
     }
@@ -88,12 +103,8 @@ async function main() {
     for (let i = 1; i <= 30; i++) {
         await prisma.lesson.create({
             data: {
-                name: `Lesson${i}`,
-                day: Day[
-                    Object.keys(Day)[
-                    Math.floor(Math.random() * Object.keys(Day).length)
-                    ] as keyof typeof Day
-                ],
+                name: `Lesson ${i}`,
+                day: Day[Object.keys(Day)[Math.floor(Math.random() * Object.keys(Day).length)] as keyof typeof Day],
                 startTime: new Date(new Date().setHours(new Date().getHours() + 1)),
                 endTime: new Date(new Date().setHours(new Date().getHours() + 3)),
                 subjectId: (i % 10) + 1,
@@ -107,12 +118,12 @@ async function main() {
     for (let i = 1; i <= 25; i++) {
         await prisma.parent.create({
             data: {
-                username: `parentId${i}`,
-                name: `PName ${i}`,
-                surname: `PSurname ${i}`,
-                email: `parent${i}@example.com`,
-                phone: `123-456-789${i}`,
-                address: `Address${i}`,
+                username: `parent${i}`,
+                name: `ParentName${i}`,
+                surname: `ParentSurname${i}`,
+                email: `parent${i}@school.com`,
+                phone: `91${8000000000 + i}`,
+                address: `Apartment ${i}, Block ${i % 5}, Noida`,
             },
         });
     }
@@ -122,14 +133,14 @@ async function main() {
         await prisma.student.create({
             data: {
                 username: `student${i}`,
-                name: `SName${i}`,
-                surname: `SSurname ${i}`,
-                email: `student${i}@example.com`,
-                phone: `987-654-321${i}`,
-                address: `Address${i}`,
+                name: `StudentName${i}`,
+                surname: `StudentSurname${i}`,
+                email: `student${i}@school.com`,
+                phone: `91${7000000000 + i}`,
+                address: `Street ${i}, Area ${i % 6}, Bangalore`,
                 bloodType: "O-",
                 sex: i % 2 === 0 ? UserSex.MALE : UserSex.FEMALE,
-                parentId: Math.ceil(i / 2) % 25 || 25,
+                parentId: Math.ceil(i / 2),
                 gradeId: (i % 6) + 1,
                 classId: (i % 6) + 1,
                 birthday: new Date(new Date().setFullYear(new Date().getFullYear() - 10)),
@@ -165,7 +176,7 @@ async function main() {
     for (let i = 1; i <= 10; i++) {
         await prisma.result.create({
             data: {
-                score: 90,
+                score: Math.floor(Math.random() * 100),
                 studentId: i,
                 ...(i <= 5 ? { examId: i } : { assignmentId: i - 5 }),
             },

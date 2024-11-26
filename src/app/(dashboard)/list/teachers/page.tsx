@@ -1,22 +1,15 @@
 import Pagination from '@/components/Pagination';
 import Table from '@/components/Table';
 import TableSearch from '@/components/TableSearch'
-import { role, teachersData } from '@/lib/data';
+import { role } from '@/lib/data';
 import Image from 'next/image';
 import React from 'react'
 import Link from "next/link";
+import { Teacher, Subject, Class } from '@prisma/client';
+import prisma from '@/lib/prisma';
 
-type Teacher = {
-    id: number;
-    teacherId: string;
-    name: string;
-    email?: string;
-    photo: string;
-    phone: string;
-    subjects: string[];
-    classes: string[];
-    address: string;
-};
+type TeacherList = Teacher & { subjects: Subject[] } & { classes: Class[] };
+
 const columns = [
     {
         header: "Info",
@@ -54,49 +47,58 @@ const columns = [
 ];
 
 
-const TeacherList = () => {
-
-    const renderRow = (item: Teacher) => (
-        <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm
-         hover:bg-lamaPurpleLight 
-          dark:bg-stone-800 dark:even:bg-stone-900 dark:hover:bg-gray-700
-          dark:border-slate-600">
-            <td className="flex items-center gap-4 p-4">
-                <Image
-                    src={item.photo}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="hidden xl:block w-10 h-10 rounded-full object-cover"
-                />
-                <div className="flex flex-col">
-                    <h3 className="font-semibold">{item.name}</h3>
-                    <p className="text-xs text-gray-500">{item?.email}</p>
-                </div>
-            </td>
-            <td className="hidden md:table-cell">{item.teacherId}</td>
-            <td className="hidden md:table-cell">{item.subjects.join(",")}</td>
-            <td className="hidden md:table-cell">{item.classes.join(",")}</td>
-            <td className="hidden lg:table-cell">{item.phone}</td>
-            <td className="hidden lg:table-cell">{item.address}</td>
-            <td>
-                <div className="flex items-center gap-2">
-                    <Link href={`/list/teachers/${item.id}`}>
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky dark:bg-sky-300">
-                            <Image src="/assets/eye.png" alt="" width={16} height={16} className='dark:bg-sky-300' />
-                        </button>
-                    </Link>
+const renderRow = (item: TeacherList) => (
+    <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm
+    hover:bg-lamaPurpleLight 
+     dark:bg-stone-800 dark:even:bg-stone-900 dark:hover:bg-gray-700
+     dark:border-slate-600">
+        <td className="flex items-center gap-4 p-4">
+            <Image
+                src={"/assets/avatar.png"}
+                alt=""
+                width={40}
+                height={40}
+                    className="xl:block w-10 h-10 rounded-full object-cover"
+            />
+            <div className="flex flex-col">
+                <h3 className="font-semibold">{item.name + " " + item.surname}</h3>
+                <p className="text-xs text-gray-500">{item?.email}</p>
+            </div>
+        </td>
+        <td className="hidden md:table-cell">{item.username}</td>
+        <td className="hidden md:table-cell">
+            {item.subjects.map((subject) => subject.name).join(",")}
+        </td>
+        <td className="hidden md:table-cell">
+            {item.classes.map((classItem) => classItem.name).join(",")}
+        </td>
+        <td className="hidden lg:table-cell">{item.phone}</td>
+        <td className="hidden lg:table-cell">{item.address}</td>
+        <td>
+            <div className="flex items-center gap-2">
+                <Link href={`/list/teachers/${item.id}`}>
+                    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+                        <Image src="/assets/edit.png" alt="" width={16} height={16} />
+                    </button>
+                </Link>
                     {role === "admin" && (
                         <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple dark:bg-purple-300">
                             <Image src="/assets/delete.png" alt="" width={16} height={16} />
                         </button>
                     )}
-                </div>
-            </td>
-        </tr>
-    )
+            </div>
+        </td>
+    </tr>
+);
 
+const TeacherList = async () => {
 
+    const teachers = await prisma.teacher.findMany({
+        include: {
+            subjects: true,
+            classes: true,
+        },
+    });
 
     return (
         <div className='bg-white dark:bg-stone-800 p-4 rounded-md flex-1'>
@@ -120,7 +122,7 @@ const TeacherList = () => {
             </div>
             {/* LIST */}
             <div className=''>
-                <Table columns={columns} renderRow={renderRow} data={teachersData} />
+                <Table columns={columns} renderRow={renderRow} data={teachers} />
             </div>
             {/* PAGINATION */}
             <Pagination />
