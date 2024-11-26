@@ -45,7 +45,7 @@ const Navbar = () => {
 
     const navLoggedInStatus = () => !isLoggedIn ?
         (<Link href={"/auth"}>
-            <Button className="mb-1 ml-3 -mr-2 relative w-3/4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
+            <Button className="mb-1 ml-3 -mr-2 relative w-3/4 h-[28px] bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
                 <LogIn className="w-1/2 h-full" />
                 Login
             </Button>
