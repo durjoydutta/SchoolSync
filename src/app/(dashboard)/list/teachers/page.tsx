@@ -103,7 +103,7 @@ const TeacherList = async () => {
     });
 
     return (
-        <div className='bg-white dark:bg-stone-800 p-4 rounded-md flex-1'>
+        <div className='relative bg-white dark:bg-stone-800 p-4 rounded-md flex-1'>
             {/* TOP */}
             <div className='flex items-center justify-between'>
                 <h1 className='hidden md:block text-lg font-semibold'>All Teachers</h1>
