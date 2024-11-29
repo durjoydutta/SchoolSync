@@ -2,12 +2,10 @@
 import { LogIn, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import SchoolSyncLogo from "@/components/SchoolSyncLogo"
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import BackgroundAnimation from "@/components/BackgroundAnimation"
 import { useState, useEffect } from "react";
 import DarkModeSwitch from "@/components/DarkModeSwitch";
-import UserDropDown from "@/components/UserDropDown";
+import UserDropDown from "@/components/navbar/UserDropDown";
 import AppNavigationMenu from '@/components/navbar/AppNavigationMenu';
 import {
     SidebarTrigger,
