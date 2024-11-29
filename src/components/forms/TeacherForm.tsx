@@ -144,7 +144,7 @@ const TeacherForm = ({
             className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
             htmlFor="img"
           >
-            <Image src="/upload.png" alt="" width={28} height={28} />
+            <Image src="/assets/upload.png" alt="" width={28} height={28} />
             <span>Upload a photo</span>
           </label>
           <input type="file" id="img" {...register("img")} className="hidden" />
