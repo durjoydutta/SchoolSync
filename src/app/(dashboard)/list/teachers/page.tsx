@@ -100,6 +100,7 @@ const TeacherList = async () => {
             subjects: true,
             classes: true,
         },
+        take:10
     });
 
     return (
@@ -130,7 +131,7 @@ const TeacherList = async () => {
                 <Table columns={columns} renderRow={renderRow} data={teachers} />
             </div>
             {/* PAGINATION */}
-            <Pagination />
+            {/* <Pagination /> */}
 
         </div>
     )
