@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sidebar"
 import { BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
+import { UserButton } from '@clerk/nextjs';
 
 const data = {
     user: {
@@ -67,7 +68,8 @@ const Navbar = () => {
                 </div>
                 <div className="flex justify-end items-center">
                     <DarkModeSwitch />
-                    <div className="mt-1">{navLoggedInStatus()}</div>
+                    {/* <div className="mt-1">{navLoggedInStatus()}</div> */}
+                    <UserButton />
                 </div>
             </nav>
         </motion.header>

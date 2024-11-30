@@ -188,3 +188,8 @@ export default function SignupForm({ onToggle }: SignupFormProps) {
   )
 }
 
+// import { SignUp } from '@clerk/nextjs'
+
+// export default function Page() {
+//   return <SignUp routing="path" path="/auth" />
+// }
