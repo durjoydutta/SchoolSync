@@ -62,8 +62,11 @@ const Navbar = () => {
         >
             <nav className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                    {isSignedIn && <SidebarTrigger className="" /> }
-                    <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
+                    {isSignedIn &&
+                        <>
+                            <SidebarTrigger className="" />
+                            <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
+                        </>}
                     <AppNavigationMenu />
                 </div>
                 <div className="flex justify-end items-center">
