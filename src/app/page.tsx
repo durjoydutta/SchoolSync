@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { use, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { Bell, Calendar, BarChart, GraduationCap, Users, UserCircle, BookOpen } from 'lucide-react'
 import Hero from "@/components/home/Hero"
@@ -9,13 +9,25 @@ import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
 import Navbar from "@/components/navbar/MainNavbar"
+import { useUser } from '@clerk/nextjs'
+import { useRouter } from 'next/navigation'
 
 const Homepage = () => {
   const controls = useAnimation()
+  const { isLoaded, isSignedIn, user } = useUser()
 
+  const router=useRouter()
+  // console.log("This is user",user)
+
+  console.log(user)
   useEffect(() => {
     controls.start('visible')
-  }, [controls])
+    const role=user?.publicMetadata.role;
+
+    if(role){
+      router.push(`${role}`)
+
+  }}, [controls,user,router])
 
   const stats = [
     { label: "Active Students", value: "2,000+" },

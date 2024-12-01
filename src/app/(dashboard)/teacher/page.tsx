@@ -4,7 +4,7 @@ import EventCalendar from "@/components/dashboard/EventCalendar";
 import BigCalendar from '@/components/dashboard/BigCalendar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-const StudentPanel = () => {
+const TeacherPanel = () => {
   return (
     <div className="flex gap-4 flex-col lg:flex-row w-full">
       {/* LEFT */}
@@ -24,4 +24,4 @@ const StudentPanel = () => {
   )
 }
 
-export default StudentPanel
+export default TeacherPanel

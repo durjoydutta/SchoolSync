@@ -7,6 +7,7 @@ import React from 'react'
 import Link from "next/link";
 import { Teacher, Subject, Class } from '@prisma/client';
 import prisma from '@/lib/prisma';
+import FormModal from '@/components/FormModal';
 
 type TeacherList = Teacher & { subjects: Subject[] } & { classes: Class[] };
 
@@ -58,7 +59,7 @@ const renderRow = (item: TeacherList) => (
                 alt=""
                 width={40}
                 height={40}
-                    className="xl:block w-10 h-10 rounded-full object-cover"
+                className="xl:block w-10 h-10 rounded-full object-cover"
             />
             <div className="flex flex-col">
                 <h3 className="font-semibold">{item.name + " " + item.surname}</h3>
@@ -81,11 +82,12 @@ const renderRow = (item: TeacherList) => (
                         <Image src="/assets/eye.png" alt="" width={16} height={16} />
                     </button>
                 </Link>
-                    {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple dark:bg-purple-300">
-                            <Image src="/assets/delete.png" alt="" width={16} height={16} />
-                        </button>
-                    )}
+                {role === "admin" && (
+                    // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple dark:bg-purple-300">
+                    //     <Image src="/assets/delete.png" alt="" width={16} height={16} />
+                    // </button>
+                    <FormModal table="teacher" type="delete" id={item.id} />
+                )}
             </div>
         </td>
     </tr>
@@ -98,10 +100,11 @@ const TeacherList = async () => {
             subjects: true,
             classes: true,
         },
+        take:10
     });
 
     return (
-        <div className='bg-white dark:bg-stone-800 p-4 rounded-md flex-1'>
+        <div className='relative bg-white dark:bg-stone-800 p-4 rounded-md flex-1'>
             {/* TOP */}
             <div className='flex items-center justify-between'>
                 <h1 className='hidden md:block text-lg font-semibold'>All Teachers</h1>
@@ -114,9 +117,12 @@ const TeacherList = async () => {
                         <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
                             <Image src='/assets/sort.png' alt="filter button" width={14} height={14} />
                         </button>
-                        {role === "admin" && <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
-                            <Image src='/assets/plus.png' alt="filter button" width={14} height={14} />
-                        </button>}
+                        {role === "admin" && (
+                            // <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
+                            //     <Image src='/assets/plus.png' alt="filter button" width={14} height={14} />
+                            // </button>
+                            <FormModal table="teacher" type="create"/>
+                        )}
                     </div>
                 </div>
             </div>

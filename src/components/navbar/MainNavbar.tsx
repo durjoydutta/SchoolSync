@@ -2,18 +2,17 @@
 import { LogIn, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import SchoolSyncLogo from "@/components/SchoolSyncLogo"
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import BackgroundAnimation from "@/components/BackgroundAnimation"
 import { useState, useEffect } from "react";
 import DarkModeSwitch from "@/components/DarkModeSwitch";
-import UserDropDown from "@/components/UserDropDown";
+import UserDropDown from "@/components/navbar/UserDropDown";
 import AppNavigationMenu from '@/components/navbar/AppNavigationMenu';
 import {
     SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
+import { UserButton, useUser } from '@clerk/nextjs';
 
 const data = {
     user: {
@@ -25,7 +24,7 @@ const data = {
 }
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false) // This should be replaced with actual auth logic
+    const { isLoaded, isSignedIn, user } = useUser()
     const [userRole, setUserRole] = useState('student')
     const [isVisible, setIsVisible] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
@@ -43,7 +42,7 @@ const Navbar = () => {
         setLastScrollY(latest)
     })
 
-    const navLoggedInStatus = () => !isLoggedIn ?
+    const navLoggedInStatus = () => !isSignedIn ?
         (<Link href={"/auth"}>
             <Button className="mb-1 ml-3 -mr-2 relative w-3/4 h-[28px] bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
                 <LogIn className="w-1/2 h-full" />
@@ -51,7 +50,7 @@ const Navbar = () => {
             </Button>
         </Link>
         ) : (
-            <UserDropDown user={data.user} />
+            <UserButton />
         )
 
     return (
@@ -63,8 +62,11 @@ const Navbar = () => {
         >
             <nav className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                    <SidebarTrigger className="" />
-                    <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
+                    {isSignedIn &&
+                        <>
+                            <SidebarTrigger className="" />
+                            <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
+                        </>}
                     <AppNavigationMenu />
                 </div>
                 <div className="flex justify-end items-center">
