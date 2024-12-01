@@ -9,16 +9,16 @@ import { use, useEffect } from 'react'
 const SignInForm = () => {
   
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="flex w-full items-center justify-center">
       
       <SignIn.Root>
-        <SignIn.Step name="start">
+        <SignIn.Step name="start" className="w-full max-w-md">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.3 }}
-            className="w-full space-y-6 rounded-2xl p-8"
+            className="w-full space-y-6 rounded-2xl p-4"
           >
             <header className="space-y-2">
               <h2 className="text-2xl font-bold text-blue-950 dark:text-white">Sign in to SchoolSync</h2>
