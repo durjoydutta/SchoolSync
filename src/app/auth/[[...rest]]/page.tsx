@@ -1,16 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { GalleryVerticalEnd } from 'lucide-react'
 import Link from "next/link"
 import Image from "next/image"
 import DarkModeSwitch from "@/components/DarkModeSwitch"
 import { motion, AnimatePresence } from "framer-motion"
 import LoginForm from "@/components/auth/login-form"
-import SignupForm from "@/components/auth/signup-form"
+import SignInForm from "@/components/auth/signin-form"
+
+
 
 export default function AuthLayout() {
-    const [isLogin, setIsLogin] = useState(true)
+    const [isLogin, setIsLogin] = useState(false)
 
     return (
         <div className="relative grid min-h-svh md:grid-cols-2">
@@ -40,24 +42,16 @@ export default function AuthLayout() {
                 >
                     <div className="w-full max-w-sm">
                         <AnimatePresence mode="wait">
-                            {isLogin ? (
+                            {/* {isLogin ? (
                                 <LoginForm key="login" onToggle={() => setIsLogin(false)} />
                             ) : (
                                 <SignupForm key="signup" onToggle={() => setIsLogin(true)} />
-                            )}
+                            )} */}
+                          <SignInForm />
                         </AnimatePresence>
+
                     </div>
                 </motion.div>
-                <motion.span
-                    className="absolute bottom-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500 flex justify-stretch items-center gap-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                >
-                    <Link href="/termsofuse" className="text-sm shrink text-nowrap hover:underline">Terms of Use</Link>
-                    <span className="text-sm">|</span>
-                    <Link href="/privacypolicy" className="text-sm shrink text-nowrap hover:underline">Privacy Policy</Link>
-                </motion.span>
             </motion.div>
             {/* RIGHT */}
             <div className="relative hidden bg-muted md:block">
@@ -91,3 +85,8 @@ export default function AuthLayout() {
     );
 }
 
+// import { SignIn } from '@clerk/nextjs'
+
+// export default function AuthLayout() {
+//   return <SignIn />
+// }

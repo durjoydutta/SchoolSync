@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { SignIn } from '@clerk/nextjs'
+
 
 interface LoginFormProps {
     onToggle: () => void
@@ -65,3 +67,8 @@ export default function LoginForm({ onToggle }: LoginFormProps) {
     )
 }
 
+// import { SignIn } from '@clerk/nextjs'
+
+// export default function LoginForm() {
+//   return <SignIn />
+// }
