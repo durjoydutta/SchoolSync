@@ -40,7 +40,7 @@ export default function AuthLayout() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                    <div className="w-full max-w-sm">
+                    <div className="w-full">
                         <AnimatePresence mode="wait">
                             {/* {isLogin ? (
                                 <LoginForm key="login" onToggle={() => setIsLogin(false)} />
@@ -74,7 +74,7 @@ export default function AuthLayout() {
                 </motion.div>
             </div>
             <motion.div
-                className="absolute top-[1.3rem] right-7 transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-[1.6rem] md:top-[2.4rem] right-7 transform -translate-x-1/2 -translate-y-1/2"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4, duration: 0.3 }}
@@ -84,9 +84,3 @@ export default function AuthLayout() {
         </div>
     );
 }
-
-// import { SignIn } from '@clerk/nextjs'
-
-// export default function AuthLayout() {
-//   return <SignIn />
-// }
