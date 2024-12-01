@@ -24,9 +24,6 @@ const data = {
 }
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false) 
-    // This should be replaced with actual auth logic
-
     const { isLoaded, isSignedIn, user } = useUser()
     const [userRole, setUserRole] = useState('student')
     const [isVisible, setIsVisible] = useState(true)
@@ -65,7 +62,7 @@ const Navbar = () => {
         >
             <nav className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                    <SidebarTrigger className="" />
+                    {isSignedIn && <SidebarTrigger className="" /> }
                     <Separator orientation="vertical" className="mr-2 h-4 hidden lg:block" />
                     <AppNavigationMenu />
                 </div>
