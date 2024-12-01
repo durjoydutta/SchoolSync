@@ -18,7 +18,7 @@ const SignInForm = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.3 }}
-            className="w-[400px] space-y-6 rounded-2xl p-8"
+            className="w-full space-y-6 rounded-2xl p-8"
           >
             <header className="space-y-2">
               <h2 className="text-2xl font-bold text-blue-950 dark:text-white">Sign in to SchoolSync</h2>
