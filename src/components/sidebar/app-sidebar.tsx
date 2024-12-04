@@ -75,7 +75,7 @@ const adminData = {
     },
     {
       title: "Academics",
-      url: "/list/classes",
+      url: "/academics",
       icon: Calendar,
       items: [
         { title: "Classes", url: "/list/classes" },
@@ -87,7 +87,7 @@ const adminData = {
     },
     {
       title: "Communication",
-      url: "/",
+      url: "/communication",
       icon: Settings2,
       items: [
         { title: "Video Meeting", url: "/list/meeting" },
