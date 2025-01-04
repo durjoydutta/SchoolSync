@@ -141,7 +141,7 @@ const TeacherForm = ({
         </div>
         <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
           <label
-            className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
+            className="text-xs text-gray-500 dark:text-slate-300 flex items-center gap-2 cursor-pointer"
             htmlFor="img"
           >
             <Image src="/assets/upload.png" alt="" width={28} height={28} />
