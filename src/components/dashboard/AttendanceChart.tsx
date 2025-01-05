@@ -21,7 +21,7 @@ const data = [
     },
     {
         name: "Thu",
-        present: 90,
+        present: 9,
         absent: 75,
     },
     {
