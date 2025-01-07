@@ -5,6 +5,7 @@ import FinanceChart from "@/components/dashboard/FinanceChart";
 import UserCard from "@/components/dashboard/UserCard";
 import PieChart from "@/components/dashboard/PieChart"
 import CountChartContainer from "@/components/dashboard/CountChartContainer";
+import EventCalendarContainer from "@/components/dashboard/EventCalendarContainer";
 
 const AdminPage = () => {
   return (
@@ -39,7 +40,7 @@ const AdminPage = () => {
       </div>
       {/* RIGHT EVENT PANEL */}
       <div className="w-full lg:w-1/3 flex flex-col gap-4">
-        <EventCalendar />
+        <EventCalendarContainer />
         <Announcements />
       </div>
     </div>

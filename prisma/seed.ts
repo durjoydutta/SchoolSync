@@ -281,13 +281,47 @@ async function main() {
     }
 
     // ANNOUNCEMENT
-    for (let i = 1; i <= 5; i++) {
+
+    const announcementData = [
+        {
+            title: "Upcoming Parent-Teacher Meeting",
+            description: "Join us for a parent-teacher meeting to discuss your child's progress and upcoming events.",
+            date: new Date("2024-10-05"),
+            classId: 1, // Adjust classId as needed
+        },
+        {
+            title: "School Holiday Notice",
+            description: "Please note that the school will be closed for winter holidays from December 20th to January 5th.",
+            date: new Date("2024-12-20"),
+            classId: 2, // Adjust classId as needed
+        },
+        {
+            title: "Science Fair Announcement",
+            description: "Students are invited to participate in the annual Science Fair. Registration is open until November 30th.",
+            date: new Date("2024-11-15"),
+            classId: 3, // Adjust classId as needed
+        },
+        {
+            title: "Field Trip to the Museum",
+            description: "A field trip to the local museum is scheduled for November 25th. Permission slips must be returned by November 15th.",
+            date: new Date("2024-11-25"),
+            classId: 4, // Adjust classId as needed
+        },
+        {
+            title: "New Sports Program Launch",
+            description: "We are excited to announce the launch of a new sports program for students. Sign-ups begin next week.",
+            date: new Date("2024-09-30"),
+            classId: 5, // Adjust classId as needed
+        },
+    ];
+
+    for (const announcement of announcementData) {
         await prisma.announcement.create({
             data: {
-                title: `Announcement ${i}`,
-                description: `Description for Announcement ${i}`,
-                date: new Date(),
-                classId: (i % 5) + 1,
+                title: announcement.title,
+                description: announcement.description,
+                date: announcement.date,
+                classId: announcement.classId,
             },
         });
     }
