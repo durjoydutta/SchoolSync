@@ -1,8 +1,7 @@
 "use client"
 
-import { TrendingUp, TrendingDown } from "lucide-react"
+import { TrendingUp, TrendingDown, MoreHorizontal } from "lucide-react"
 import { Pie, PieChart, Cell, ResponsiveContainer, Legend } from "recharts"
-import { MoreHorizontal } from 'lucide-react'
 
 import {
     Card,
@@ -19,35 +18,33 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 
-const chartData = [
-    { person: "Male", count: 26, fill: "hsl(var(--chart-1))" },
-    { person: "Female", count: 24, fill: "hsl(var(--chart-5))" },
-]
+const PieChartComponent = ({ boys, girls }: { boys: number; girls: number }) => {
+    const chartData = [
+        { person: "Male", count: boys, fill: "hsl(var(--chart-1))" },
+        { person: "Female", count: girls, fill: "hsl(var(--chart-5))" },
+    ]
 
-const chartConfig = {
-    Participants: {
-        label: "Students",
-    },
-    Male: {
-        label: "Male",
-    },
-    Female: {
-        label: "Female",
-    },
-} satisfies ChartConfig
+    const chartConfig = {
+        Participants: {
+            label: "Students",
+        },
+        Male: {
+            label: "Male",
+        },
+        Female: {
+            label: "Female",
+        },
+    } satisfies ChartConfig
 
-
-export default function MaleFemaleRatioPieChart() {
     const totalCount = chartData.reduce((sum, entry) => sum + entry.count, 0)
     const malePercentage = ((chartData[0].count / totalCount) * 100).toFixed(1)
     const femalePercentage = ((chartData[1].count / totalCount) * 100).toFixed(1)
-    const trend = parseFloat(malePercentage) > parseFloat(femalePercentage) ?
-        { direction: "up" as const, value: (parseFloat(malePercentage) - parseFloat(femalePercentage)).toFixed(1) } :
-        { direction: "down" as const, value: (parseFloat(femalePercentage) - parseFloat(malePercentage)).toFixed(1) }
+    const trend = parseFloat(malePercentage) > parseFloat(femalePercentage)
+        ? { direction: "up" as const, value: (parseFloat(malePercentage) - parseFloat(femalePercentage)).toFixed(1) }
+        : { direction: "down" as const, value: (parseFloat(femalePercentage) - parseFloat(malePercentage)).toFixed(1) }
 
     return (
         <Card className="flex flex-col h-full justify-between">
-{/* Suggested code may be subject to a license. Learn more: ~LicenseLog:900158266. */}
             <CardHeader className="flex-row items-center justify-between pb-2 -m-1">
                 <CardTitle>Student Ratio</CardTitle>
                 <MoreHorizontal className="h-8 w-8" />
@@ -82,10 +79,11 @@ export default function MaleFemaleRatioPieChart() {
             <CardFooter className="flex-col gap-2 text-sm">
                 <div className="flex items-center gap-2 font-medium leading-none">
                     Male ratio {trend.direction === "up" ? "higher" : "lower"} by {trend.value}%
-                    {trend.direction === "up" ?
-                        <TrendingUp className="h-4 w-4 text-green-500" /> :
+                    {trend.direction === "up" ? (
+                        <TrendingUp className="h-4 w-4 text-green-500" />
+                    ) : (
                         <TrendingDown className="h-4 w-4 text-red-500" />
-                    }
+                    )}
                 </div>
                 <div className="leading-none text-muted-foreground">
                     Total {chartConfig.Participants.label}: {totalCount}
@@ -95,3 +93,4 @@ export default function MaleFemaleRatioPieChart() {
     )
 }
 
+export default PieChartComponent
