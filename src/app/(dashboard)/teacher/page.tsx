@@ -1,8 +1,8 @@
 
 import Announcements from "@/components/dashboard/Announcements";
-import EventCalendar from "@/components/dashboard/EventCalendar";
 import BigCalendar from '@/components/dashboard/BigCalendar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import EventCalendarContainer from "@/components/dashboard/EventCalendarContainer";
 
 const TeacherPanel = () => {
   return (
@@ -17,7 +17,7 @@ const TeacherPanel = () => {
 
       {/* RIGHT */}
       <div className="w-full xl:w-1/3 flex flex-col gap-4">
-        <EventCalendar />
+        <EventCalendarContainer />
         <Announcements/>
       </div>
     </div>
