@@ -1,4 +1,4 @@
-# 🏫 Next.js Full-Stack School Meeting Management Application
+# 🏫 Next.js Full-Stack School-Management Application /w Video Conference Integration
 
 This repository houses a comprehensive full-stack **School Management Application**, leveraging **Next.js**, **Tailwind CSS**, **Node.js**, and **PostgreSQL** with **Prisma ORM** and **Supabase**. The application is a modern solution to manage school operations efficiently with tailored dashboards for administrators, teachers, students, and parents.
 
@@ -45,8 +45,8 @@ This repository houses a comprehensive full-stack **School Management Applicatio
 - Fully optimized for all screen sizes and devices.
 
 ### ⚙️ **Modern Tech Stack**
-- **Frontend:** Next.js, React, Tailwind CSS, Clerk.dev.
-- **Backend:** Node.js, Prisma ORM, PostgreSQL with **Supabase**.
+- **Frontend:** Next.js, TypeScript, Tailwind CSS, Clerk.dev.
+- **Backend:** Next.js, Prisma ORM, PostgreSQL with **Supabase**.
 
 ---
 
@@ -160,4 +160,3 @@ This project is licensed under the **MIT License**. See the LICENSE file for det
 
 
 **Crafted with ❤️ by Group-7**
-```
