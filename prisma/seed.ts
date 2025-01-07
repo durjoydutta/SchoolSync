@@ -5,7 +5,7 @@ async function main() {
     // ADMINS
     const adminData = [
         {
-            username: "durjoydc",
+            username: "ddc",
             email: "durjoy.dutta@gmail.com",
             phone: "9876543210",
             name: "Durjoy",
