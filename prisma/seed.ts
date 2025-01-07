@@ -268,14 +268,87 @@ async function main() {
     }
 
     // EVENT
-    for (let i = 1; i <= 5; i++) {
+    const eventData = [
+        {
+            title: "Science Fair",
+            description: "Join us for the annual Science Fair where students showcase their projects.",
+            startTime: new Date("2025-01-08T10:00:00"),
+            endTime: new Date("2024-03-10T15:00:00"),
+            classId: 1,
+        },
+        {
+            title: "Parent-Teacher Conference",
+            description: "Meet with teachers to discuss your child's progress.",
+            startTime: new Date("2025-01-08T16:00:00"),
+            endTime: new Date("2025-01-08T18:00:00"),
+            classId: 1,
+        },
+        {
+            title: "Field Trip to the Zoo",
+            description: "A fun day at the zoo for all students in grades 1-3.",
+            startTime: new Date("2025-01-07T09:00:00"),
+            endTime: new Date("2025-01-07T14:00:00"),
+            classId: 2,
+        },
+        {
+            title: "Sports Day",
+            description: "Join us for a day of sports and fun activities.",
+            startTime: new Date("2025-01-07T08:00:00"),
+            endTime: new Date("2025-01-07T17:00:00"),
+            classId: 3,
+        },
+        {
+            title: "Art Exhibition",
+            description: "Showcasing the artistic talents of our students.",
+            startTime: new Date("2025-01-08T10:00:00"),
+            endTime: new Date("2025-01-08T16:00:00"),
+            classId: 4,
+        },
+        {
+            title: "Book Fair",
+            description: "Explore a variety of books and meet local authors.",
+            startTime: new Date("2024-08-01T09:00:00"),
+            endTime: new Date("2024-08-01T17:00:00"),
+            classId: 3,
+        },
+        {
+            title: "Graduation Ceremony",
+            description: "Celebrating the achievements of our graduating students.",
+            startTime: new Date("2025-01-09T15:00:00"),
+            endTime: new Date("2025-01-09T18:00:00"),
+            classId: 6,
+        },
+        {
+            title: "Winter Concert",
+            description: "Enjoy performances by our talented music students.",
+            startTime: new Date("2025-01-09T18:00:00"),
+            endTime: new Date("2025-01-09T20:00:00"),
+            classId: 5,
+        },
+        {
+            title: "Health and Wellness Day",
+            description: "Activities and workshops focused on health and wellness.",
+            startTime: new Date("2024-11-05T09:00:00"),
+            endTime: new Date("2024-11-05T15:00:00"),
+            classId: 5,
+        },
+        {
+            title: "End of Year Celebration",
+            description: "Celebrate the end of the school year with fun activities.",
+            startTime: new Date("2024-06-30T10:00:00"),
+            endTime: new Date("2024-06-30T14:00:00"),
+            classId: 6,
+        },
+    ];
+
+    for (const event of eventData) {
         await prisma.event.create({
             data: {
-                title: `Event ${i}`,
-                description: `Description for Event ${i}`,
-                startTime: new Date(new Date().setHours(new Date().getHours() + 1)),
-                endTime: new Date(new Date().setHours(new Date().getHours() + 2)),
-                classId: (i % 5) + 1,
+                title: event.title,
+                description: event.description,
+                startTime: event.startTime,
+                endTime: event.endTime,
+                classId: event.classId,
             },
         });
     }
