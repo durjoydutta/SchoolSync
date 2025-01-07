@@ -98,7 +98,7 @@ const AssignmentList = () => {
         <Table columns={columns} renderRow={renderRow} data={assignmentsData} />
       </div>
       {/* PAGINATION */}
-      <Pagination />
+      {/* <Pagination /> */}
 
     </div>
   )

@@ -98,7 +98,7 @@ const ExamList = () => {
         <Table columns={columns} renderRow={renderRow} data={examsData} />
       </div>
       {/* PAGINATION */}
-      <Pagination />
+      {/* <Pagination /> */}
 
     </div>
   )

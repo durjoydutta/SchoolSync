@@ -91,7 +91,7 @@ const LessonList = () => {
         <Table columns={columns} renderRow={renderRow} data={lessonsData} />
       </div>
       {/* PAGINATION */}
-      <Pagination />
+      {/* <Pagination /> */}
 
     </div>
   )
