@@ -37,13 +37,13 @@ const adminData = {
     avatar: "https://github.com/admin.png",
   },
   navMain: [
-    {
-      title: "Dashboard",
-      url: "/admin",
-      icon: BookOpen,
-      isActive: true,
-      items: [],
-    },
+    // {
+    //   title: "Dashboard",
+    //   url: "/admin",
+    //   icon: BookOpen,
+    //   isActive: true,
+    //   items: [],
+    // },
     {
       title: "Students",
       url: "/student",
@@ -90,7 +90,8 @@ const adminData = {
       url: "/communication",
       icon: Settings2,
       items: [
-        { title: "Video Meeting", url: "/list/meeting" },
+        { title: "Check Availability", url: "/list/meeting" },
+        { title: "Schedule Meeting", url: "https://parent-teacher-dbms.vercel.app/" },
         { title: "Chat Message", url: "/list/message" },
       ],
     },
@@ -179,7 +180,8 @@ const teacherData = {
       url: "/",
       icon: Settings2,
       items: [
-        { title: "Video Meeting", url: "/list/meeting" },
+        { title: "Check Availability", url: "/list/meeting" },
+        { title: "Schedule Meeting", url: "https://parent-teacher-dbms.vercel.app/login?role=teacher" },
         { title: "Chat Message", url: "/list/message" },
       ],
     },
@@ -202,7 +204,8 @@ const parentData = {
       url: "/",
       icon: Settings2,
       items: [
-        { title: "Video Meeting", url: "/list/meeting" },
+        { title: "Check Availability", url: "/list/meeting" },
+        { title: "Schedule Meeting", url: "https://parent-teacher-dbms.vercel.app/login?role=parent" },
         { title: "Chat Message", url: "/list/message" },
       ],
     },
@@ -278,11 +281,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={selectedData.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser           user={{
-            name,
-            email,
-            avatar,
-          }} />
+        <NavUser user={{
+          name,
+          email,
+          avatar,
+        }} />
       </SidebarFooter>
     </Sidebar>
   );

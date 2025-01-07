@@ -20,8 +20,8 @@ import {
 } from "@/components/ui/chart"
 
 const chartData = [
-    { person: "Male", count: 420, fill: "hsl(var(--chart-1))" },
-    { person: "Female", count: 200, fill: "hsl(var(--chart-5))" },
+    { person: "Male", count: 26, fill: "hsl(var(--chart-1))" },
+    { person: "Female", count: 24, fill: "hsl(var(--chart-5))" },
 ]
 
 const chartConfig = {
