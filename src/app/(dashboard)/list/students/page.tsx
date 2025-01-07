@@ -15,8 +15,9 @@ type Student = {
     photo: string;
     phone?: string;
     grade: number;
-    class: string;
+    class: { name: string };
     address: string;
+    username?: string;
 };
 const columns = [
     {
