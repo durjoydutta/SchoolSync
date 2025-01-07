@@ -1,4 +1,4 @@
-import EventCalendar from "./EventCalendar";
+import EventCalendar from "@/components/dashboard/EventCalendar";
 import prisma from "@/lib/prisma";
 
 const EventCalendarContainer = async () => {
