@@ -2,28 +2,6 @@ import { Day, PrismaClient, UserSex } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-    // ADMINS
-    const adminData = [
-        {
-            username: "durjoydc",
-            email: "durjoy.dutta@gmail.com",
-            phone: "9876543210",
-            name: "Durjoy",
-            surname: "Dutta",
-        },
-        {
-            username: "eahtashamummam",
-            email: "eahtasham.ummam@gmail.com",
-            phone: "9123456789",
-            name: "Eahtasham",
-            surname: "Ummam",
-        },
-    ];
-
-    for (const admin of adminData) {
-        await prisma.admin.create({ data: admin });
-    }
-
     // GRADE
     for (let i = 1; i <= 6; i++) {
         await prisma.grade.create({
