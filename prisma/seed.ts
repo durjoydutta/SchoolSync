@@ -2,6 +2,28 @@ import { Day, PrismaClient, UserSex } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
+    // ADMINS
+    const adminData = [
+        {
+            username: "durjoydc",
+            email: "durjoy.dutta@gmail.com",
+            phone: "9876543210",
+            name: "Durjoy",
+            surname: "Dutta",
+        },
+        {
+            username: "eahtashamummam",
+            email: "eahtasham.ummam@gmail.com",
+            phone: "9123456789",
+            name: "Eahtasham",
+            surname: "Ummam",
+        },
+    ];
+
+    for (const admin of adminData) {
+        await prisma.admin.create({ data: admin });
+    }
+
     // GRADE
     for (let i = 1; i <= 6; i++) {
         await prisma.grade.create({
@@ -93,12 +115,42 @@ async function main() {
     }
 
     // PARENT
-    for (let i = 1; i <= 25; i++) {
+    const parentNames = [
+        { name: "Rajesh", surname: "Sharma" },
+        { name: "Suman", surname: "Patel" },
+        { name: "Anil", surname: "Verma" },
+        { name: "Neeta", surname: "Gupta" },
+        { name: "Vikram", surname: "Reddy" },
+        { name: "Pooja", surname: "Kumar" },
+        { name: "Suresh", surname: "Singh" },
+        { name: "Kavita", surname: "Mehta" },
+        { name: "Ravi", surname: "Bansal" },
+        { name: "Aarti", surname: "Chawla" },
+        { name: "Sanjay", surname: "Joshi" },
+        { name: "Priya", surname: "Nair" },
+        { name: "Manoj", surname: "Desai" },
+        { name: "Tanvi", surname: "Agarwal" },
+        { name: "Shivani", surname: "Malhotra" },
+        { name: "Deepak", surname: "Kumar" },
+        { name: "Neha", surname: "Singh" },
+        { name: "Karan", surname: "Yadav" },
+        { name: "Ritika", surname: "Sharma" },
+        { name: "Mohit", surname: "Gupta" },
+        { name: "Sneha", surname: "Patel" },
+        { name: "Nikhil", surname: "Verma" },
+        { name: "Amit", surname: "Reddy" },
+        { name: "Geeta", surname: "Bansal" },
+        { name: "Rohit", surname: "Choudhary" },
+        { name: "Sakshi", surname: "Joshi" },
+        { name: "Arun", surname: "Kumar" },
+    ];
+
+    for (let i = 1; i <= parentNames.length; i++) {
         await prisma.parent.create({
             data: {
                 username: `parent${i}`,
-                name: `ParentName${i}`,
-                surname: `ParentSurname${i}`,
+                name: parentNames[i - 1].name,
+                surname: parentNames[i - 1].surname,
                 email: `parent${i}@school.com`,
                 phone: `91${8000000000 + i}`,
                 address: `Apartment ${i}, Block ${i % 5}, Noida`,
@@ -107,12 +159,54 @@ async function main() {
     }
 
     // STUDENT
-    for (let i = 1; i <= 50; i++) {
+    const studentNames = [
+        { name: "Aarav", surname: "Sharma" },
+        { name: "Vivaan", surname: "Patel" },
+        { name: "Aditya", surname: "Verma" },
+        { name: "Vihaan", surname: "Gupta" },
+        { name: "Arjun", surname: "Reddy" },
+        { name: "Sai", surname: "Kumar" },
+        { name: "Anaya", surname: "Singh" },
+        { name: "Aanya", surname: "Mehta" },
+        { name: "Ishaan", surname: "Bansal" },
+        { name: "Riya", surname: "Choudhary" },
+        { name: "Saanvi", surname: "Joshi" },
+        { name: "Krishna", surname: "Nair" },
+        { name: "Rohan", surname: "Desai" },
+        { name: "Tanvi", surname: "Agarwal" },
+        { name: "Kavya", surname: "Malhotra" },
+        { name: "Shivansh", surname: "Yadav" },
+        { name: "Aarohi", surname: "Singh" },
+        { name: "Nirvaan", surname: "Kumar" },
+        { name: "Rudra", surname: "Sharma" },
+        { name: "Aditi", surname: "Patel" },
+        { name: "Dev", surname: "Verma" },
+        { name: "Mira", surname: "Gupta" },
+        { name: "Kiaan", surname: "Reddy" },
+        { name: "Pihu", surname: "Kumar" },
+        { name: "Reyansh", surname: "Bansal" },
+        { name: "Siddharth", surname: "Choudhary" },
+        { name: "Tanish", surname: "Joshi" },
+        { name: "Aarav", surname: "Nair" },
+        { name: "Ritika", surname: "Desai" },
+        { name: "Anvi", surname: "Agarwal" },
+        { name: "Yash", surname: "Malhotra" },
+        { name: "Kunal", surname: "Yadav" },
+        { name: "Siddhi", surname: "Sharma" },
+        { name: "Riyaan", surname: "Patel" },
+        { name: "Aashvi", surname: "Verma" },
+        { name: "Dhruv", surname: "Gupta" },
+        { name: "Naina", surname: "Reddy" },
+        { name: "Lakshya", surname: "Kumar" },
+        { name: "Sakshi", surname: "Singh" },
+    ];
+
+    for (let i = 1; i <= studentNames.length; i++) {
         await prisma.student.create({
             data: {
                 username: `student${i}`,
-                name: `StudentName${i}`,
-                surname: `StudentSurname${i}`,
+                name: studentNames[i - 1].name,
+                surname: studentNames[i - 1].surname,
                 email: `student${i}@school.com`,
                 phone: `91${7000000000 + i}`,
                 address: `Street ${i}, Area ${i % 6}, Bangalore`,

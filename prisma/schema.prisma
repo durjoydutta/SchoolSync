@@ -1,19 +1,26 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["typedSql"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Admin {
-  id       String @id
-  username String @unique
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  name      String
+  surname   String
+  email     String   @unique
+  phone     String?  @unique
+  createdAt DateTime @default(now())
 }
 
 model Student {
-  id          String       @id
+  id          Int          @id @default(autoincrement())
   username    String       @unique
   name        String
   surname     String
@@ -24,7 +31,7 @@ model Student {
   bloodType   String
   sex         UserSex
   createdAt   DateTime     @default(now())
-  parentId    String
+  parentId    Int
   parent      Parent       @relation(fields: [parentId], references: [id])
   classId     Int
   class       Class        @relation(fields: [classId], references: [id])
@@ -36,7 +43,7 @@ model Student {
 }
 
 model Teacher {
-  id        String    @id
+  id        Int       @id @default(autoincrement())
   username  String    @unique
   name      String
   surname   String
@@ -54,7 +61,7 @@ model Teacher {
 }
 
 model Parent {
-  id        String    @id
+  id        Int       @id @default(autoincrement())
   username  String    @unique
   name      String
   surname   String
@@ -78,7 +85,7 @@ model Class {
   name     String @unique
   capacity Int
 
-  supervisorId  String?
+  supervisorId  Int?
   supervisor    Teacher?       @relation(fields: [supervisorId], references: [id])
   lessons       Lesson[]
   students      Student[]
@@ -106,7 +113,7 @@ model Lesson {
   subject     Subject      @relation(fields: [subjectId], references: [id])
   classId     Int
   class       Class        @relation(fields: [classId], references: [id])
-  teacherId   String
+  teacherId   Int
   teacher     Teacher      @relation(fields: [teacherId], references: [id])
   exams       Exam[]
   assignments Assignment[]
@@ -143,7 +150,7 @@ model Result {
   exam         Exam?       @relation(fields: [examId], references: [id])
   assignmentId Int?
   assignment   Assignment? @relation(fields: [assignmentId], references: [id])
-  studentId    String
+  studentId    Int
   student      Student     @relation(fields: [studentId], references: [id])
 }
 
@@ -152,7 +159,7 @@ model Attendance {
   date    DateTime
   present Boolean
 
-  studentId String
+  studentId Int
   student   Student @relation(fields: [studentId], references: [id])
   lessonId  Int
   lesson    Lesson  @relation(fields: [lessonId], references: [id])
