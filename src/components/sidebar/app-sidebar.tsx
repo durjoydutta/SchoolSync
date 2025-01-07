@@ -37,16 +37,16 @@ const adminData = {
     avatar: "https://github.com/admin.png",
   },
   navMain: [
-    {
-      title: "Dashboard",
-      url: "/admin",
-      icon: BookOpen,
-      isActive: true,
-      items: [],
-    },
+    // {
+    //   title: "Dashboard",
+    //   url: "/admin",
+    //   icon: BookOpen,
+    //   isActive: true,
+    //   items: [],
+    // },
     {
       title: "Students",
-      url: "/student",
+      url: "/list/students",
       icon: Users,
       items: [
         { title: "All Students", url: "/list/students" },
@@ -56,7 +56,7 @@ const adminData = {
     },
     {
       title: "Teachers",
-      url: "/teacher",
+      url: "/list/teachers",
       icon: School,
       items: [
         { title: "All Teachers", url: "/list/teachers" },
@@ -66,7 +66,7 @@ const adminData = {
     },
     {
       title: "Parents",
-      url: "/parents",
+      url: "/list/parents",
       icon: UsersRound,
       items: [
         { title: "All Parents", url: "/list/parents" },
@@ -75,7 +75,7 @@ const adminData = {
     },
     {
       title: "Academics",
-      url: "/academics",
+      url: "/list/classes",
       icon: Calendar,
       items: [
         { title: "Classes", url: "/list/classes" },
@@ -90,13 +90,14 @@ const adminData = {
       url: "/communication",
       icon: Settings2,
       items: [
-        { title: "Video Meeting", url: "/list/meeting" },
+        { title: "Check Availability", url: "/list/meeting" },
+        { title: "Schedule Meeting", url: "https://parent-teacher-dbms.vercel.app/" },
         { title: "Chat Message", url: "/list/message" },
       ],
     },
     {
       title: "Settings",
-      url: "/settings",
+      url: "#",
       icon: Settings2,
       items: [
         { title: "General Settings", url: "/settings/general" },
@@ -132,7 +133,7 @@ const studentData = {
     },
     {
       title: "Communication",
-      url: "/",
+      url: "/communication",
       icon: Settings2,
       items: [
         { title: "Video Meeting", url: "/list/meeting" },
@@ -155,7 +156,7 @@ const teacherData = {
   navMain: [
     {
       title: "Students",
-      url: "/student",
+      url: "#",
       icon: Users,
       items: [
         { title: "All Students", url: "/list/students" },
@@ -176,10 +177,11 @@ const teacherData = {
     },
     {
       title: "Communication",
-      url: "/",
+      url: "/communication",
       icon: Settings2,
       items: [
-        { title: "Video Meeting", url: "/list/meeting" },
+        { title: "Check Availability", url: "/list/meeting" },
+        { title: "Schedule Meeting", url: "https://parent-teacher-dbms.vercel.app/login?role=teacher" },
         { title: "Chat Message", url: "/list/message" },
       ],
     },
@@ -199,10 +201,11 @@ const parentData = {
   navMain: [
     {
       title: "Communication",
-      url: "/",
+      url: "/communication",
       icon: Settings2,
       items: [
-        { title: "Video Meeting", url: "/list/meeting" },
+        { title: "Check Availability", url: "/list/meeting" },
+        { title: "Schedule Meeting", url: "https://parent-teacher-dbms.vercel.app/login?role=parent" },
         { title: "Chat Message", url: "/list/message" },
       ],
     },
@@ -278,11 +281,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={selectedData.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser           user={{
-            name,
-            email,
-            avatar,
-          }} />
+        <NavUser user={{
+          name,
+          email,
+          avatar,
+        }} />
       </SidebarFooter>
     </Sidebar>
   );

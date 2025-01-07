@@ -112,7 +112,7 @@ const ResultList = () => {
                 <Table columns={columns} renderRow={renderRow} data={resultsData} />
             </div>
             {/* PAGINATION */}
-            <Pagination />
+            {/* <Pagination /> */}
 
         </div>
     )

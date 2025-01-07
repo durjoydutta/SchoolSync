@@ -1,6 +1,5 @@
-
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["typedSql"]
 }
 
@@ -9,16 +8,15 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
-        
 
 model Admin {
-  id          Int          @id @default(autoincrement())
-  username    String       @unique
-  name        String
-  surname     String
-  email       String       @unique
-  phone       String?      @unique
-  createdAt   DateTime     @default(now())
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  name      String
+  surname   String
+  email     String   @unique
+  phone     String?  @unique
+  createdAt DateTime @default(now())
 }
 
 model Student {
@@ -83,9 +81,9 @@ model Grade {
 }
 
 model Class {
-  id          Int    @id @default(autoincrement())
-  name        String @unique
-  capacity    Int
+  id       Int    @id @default(autoincrement())
+  name     String @unique
+  capacity Int
 
   supervisorId  Int?
   supervisor    Teacher?       @relation(fields: [supervisorId], references: [id])

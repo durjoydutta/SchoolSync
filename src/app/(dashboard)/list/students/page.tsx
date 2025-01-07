@@ -1,10 +1,11 @@
 import Pagination from '@/components/Pagination';
 import Table from '@/components/Table';
 import TableSearch from '@/components/TableSearch'
-import { role, studentsData } from '@/lib/data';
+import { role } from '@/lib/data';
 import Image from 'next/image';
 import React from 'react'
 import Link from "next/link";
+import prisma from '@/lib/prisma';
 
 type Student = {
     id: number;
@@ -14,8 +15,9 @@ type Student = {
     photo: string;
     phone?: string;
     grade: number;
-    class: string;
+    class: { name: string };
     address: string;
+    username?: string;
 };
 const columns = [
     {
@@ -48,8 +50,19 @@ const columns = [
     }
 ];
 
+const StudentList = async ({ searchParams }: { searchParams: { [key: string]: string | undefined } }) => {
+    const { page } = searchParams;
+    const p = page ? parseInt(page) : 1;
 
-const StudentList = () => {
+    const students = await prisma.student.findMany({
+        include: {
+            class: true, // Include class data if needed
+        },
+        take: 10,
+        skip: (p - 1) * 10,
+    });
+
+    const count = await prisma.student.count();
 
     const renderRow = (item: Student) => (
         <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm
@@ -58,7 +71,7 @@ const StudentList = () => {
           dark:border-slate-600">
             <td className="flex items-center gap-4 p-4">
                 <Image
-                    src={item.photo}
+                    src={"/assets/avatar.png"}
                     alt=""
                     width={40}
                     height={40}
@@ -66,13 +79,13 @@ const StudentList = () => {
                 />
                 <div className="flex flex-col">
                     <h3 className="font-semibold">{item.name}</h3>
-                    <p className="text-xs text-gray-500">{item.class}</p>
+                    <p className="text-xs text-gray-500">{item.class?.name}</p>
                 </div>
             </td>
-            <td className="hidden md:table-cell">{item.studentId}</td>
-            <td className="hidden md:table-cell">{item.grade}</td>
-            <td className="hidden lg:table-cell">{item.phone}</td>
-            <td className="hidden lg:table-cell">{item.address}</td>
+            <td className="hidden md:table-cell">{item.username}</td>
+            <td className="hidden md:table-cell">{item.class.name[0]}</td>
+            <td className="hidden md:table-cell">{item.phone}</td>
+            <td className="hidden md:table-cell">{item.address}</td>
             <td>
                 <div className="flex items-center gap-2">
                     <Link href={`/list/students/${item.id}`}>
@@ -89,8 +102,6 @@ const StudentList = () => {
             </td>
         </tr>
     )
-
-
 
     return (
         <div className='bg-white dark:bg-stone-800 p-4 rounded-md flex-1'>
@@ -114,11 +125,10 @@ const StudentList = () => {
             </div>
             {/* LIST */}
             <div className=''>
-                <Table columns={columns} renderRow={renderRow} data={studentsData} />
+                <Table columns={columns} renderRow={renderRow} data={students} />
             </div>
             {/* PAGINATION */}
-            <Pagination />
-
+            <Pagination page={p} count={count} />
         </div>
     )
 }

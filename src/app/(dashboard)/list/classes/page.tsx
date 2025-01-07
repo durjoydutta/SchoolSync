@@ -103,7 +103,7 @@ const ParentList = () => {
         <Table columns={columns} renderRow={renderRow} data={classesData} />
       </div>
       {/* PAGINATION */}
-      <Pagination />
+      {/* <Pagination /> */}
 
     </div>
   )

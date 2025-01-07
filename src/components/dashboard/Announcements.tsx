@@ -1,34 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import AnnouncementCard from "@/components/dashboard/AnnouncementCard";
+import prisma from "@/lib/prisma";
+import React from "react";
 
-
-const Announcements: React.FC = () => {
-  const announcementData = [
-    {
-      title: "Lorem ipsum dolor sit",
-      date: "2024-09-11",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, expedita. Rerum, quidem facilis?",
-    },
-    {
-      title: "Lorem ipsum dolor sit",
-      date: "2024-09-11",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, expedita. Rerum, quidem facilis?",
-    },
-    {
-      title: "Lorem ipsum dolor sit",
-      date: "2024-09-11",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, expedita. Rerum, quidem facilis?",
-    },
-    {
-      title: "Lorem ipsum dolor sit",
-      date: "2024-09-11",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, expedita. Rerum, quidem facilis?",
-    },
-  ];
+const Announcements: React.FC = async () => {
+  // Fetch all announcements without role filtering
+  const announcementData = await prisma.announcement.findMany({
+    take: 3,
+    orderBy: { date: "desc" },
+  });
 
   return (
     <Card className="w-full bg-white dark:bg-stone-800 pt-4 rounded-xl">
@@ -38,11 +18,11 @@ const Announcements: React.FC = () => {
           <span className="text-xs text-gray-400">View All</span>
         </div>
         <div className="flex flex-col gap-4 mt-4">
-          {announcementData.map((announcement, index) => (
+          {announcementData.map((announcement) => (
             <AnnouncementCard
-              key={index}
+              key={announcement.id}
               title={announcement.title}
-              date={announcement.date}
+              date={announcement.date.toString()}
               description={announcement.description}
             />
           ))}

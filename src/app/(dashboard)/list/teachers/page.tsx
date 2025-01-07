@@ -93,15 +93,20 @@ const renderRow = (item: TeacherList) => (
     </tr>
 );
 
-const TeacherList = async () => {
+const TeacherList = async ({ searchParams }: { searchParams: { [key: string]: string | undefined } }) => {
+    const { page, ...queryParams } = searchParams;
+    const p = page ? parseInt(page) : 1;
 
     const teachers = await prisma.teacher.findMany({
         include: {
             subjects: true,
             classes: true,
         },
-        take:10
+        take: 10,
+        skip: (p - 1) * 10,
     });
+
+    const count = await prisma.teacher.count();
 
     return (
         <div className='relative bg-white dark:bg-stone-800 p-4 rounded-md flex-1'>
@@ -121,7 +126,7 @@ const TeacherList = async () => {
                             // <button className="w-8 h-8 flex items-center justify-center rounded-full dark:bg-lamaYellowLight bg-lamaYellow" >
                             //     <Image src='/assets/plus.png' alt="filter button" width={14} height={14} />
                             // </button>
-                            <FormModal table="teacher" type="create"/>
+                            <FormModal table="teacher" type="create" />
                         )}
                     </div>
                 </div>
@@ -131,7 +136,7 @@ const TeacherList = async () => {
                 <Table columns={columns} renderRow={renderRow} data={teachers} />
             </div>
             {/* PAGINATION */}
-            <Pagination />
+            <Pagination page={p} count={count} />
 
         </div>
     )

@@ -4,6 +4,8 @@ import EventCalendar from "@/components/dashboard/EventCalendar";
 import FinanceChart from "@/components/dashboard/FinanceChart";
 import UserCard from "@/components/dashboard/UserCard";
 import PieChart from "@/components/dashboard/PieChart"
+import CountChartContainer from "@/components/dashboard/CountChartContainer";
+import EventCalendarContainer from "@/components/dashboard/EventCalendarContainer";
 
 const AdminPage = () => {
   return (
@@ -16,14 +18,15 @@ const AdminPage = () => {
           <UserCard type="student" />
           <UserCard type="parent" />
           <UserCard type="teacher" />
-          <UserCard type="staff" />
+          <UserCard type="admin" />
         </div>
         {/* MIDDLE CHARTS */}
         <div className="flex gap-4 flex-col lg:flex-row">
           {/* SEX-RATIO CHART */}
           <div className="w-full h-[450px] lg:w-[40%] dark:bg-stone-800 rounded-xl">
             {/* <RatioChart /> */}
-            <PieChart/>
+            {/* <PieChart/> */}
+            <CountChartContainer />
           </div>
           {/* ATTENDANCE CHART */}
           <div className="w-full h-[450px] lg:w-[60%]">
@@ -37,8 +40,8 @@ const AdminPage = () => {
       </div>
       {/* RIGHT EVENT PANEL */}
       <div className="w-full lg:w-1/3 flex flex-col gap-4">
-        <EventCalendar />
-        <Announcements/>
+        <EventCalendarContainer />
+        <Announcements />
       </div>
     </div>
   );
