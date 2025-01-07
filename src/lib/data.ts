@@ -129,105 +129,97 @@ export const MeetTeachersData = [
   {
     id: 1,
     teacherId: "1234567890",
-    name: "John Doe",
-    email: "john@doe.com",
-    photo:
-      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    name: "Eahtasham Ummam",
+    email: "eahtashamummam@gmail.com",
+    photo: "/assets/avatar.png",
     phone: "1234567890",
     subjects: ["Math", "Geometry"],
     classes: ["1B", "2A", "3C"],
-    address: "123 Main St, Anytown, USA",
-    meeting: "https://calendly.com/eahtashamummam/parent-teacher-communication", // Calendly link
+    address: "123 Main St, Kolkata, India",
+    meeting: "https://calendly.com/eahtashamummam/meeting-with-parent-eahtasham-sir", // Calendly link
   },
   {
     id: 2,
     teacherId: "1234567890",
-    name: "Jane Doe",
-    email: "jane@doe.com",
-    photo:
-      "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    name: "Durjoy Dutta C",
+    email: "contact.durjoy@gmail.com",
+    photo: "/assets/avatar.png",
     phone: "1234567890",
     subjects: ["Physics", "Chemistry"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
-    meeting: "https://calendly.com/eahtashamummam321/30min", // Calendly link
+    address: "456 Other St, Bangalore, India",
+    meeting: "https://calendly.com/eahtashamummam321/meeting-with-parent-durjoy-sir", // Calendly link
   },
   {
     id: 3,
     teacherId: "1234567890",
-    name: "Mike Geller",
-    email: "mike@geller.com",
-    photo:
-      "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    name: "Rajesh Kumar",
+    email: "rajesh.kumar@gmail.com",
+    photo: "/assets/avatar.png",
+    phone: "9876543210",
     subjects: ["Biology"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "789 New St, Mumbai, India",
     meeting: "https://calendly.com/eahtashamummam/30min", // Calendly link
   },
   {
     id: 4,
     teacherId: "1234567890",
-    name: "Jay French",
-    email: "jay@gmail.com",
-    photo:
-      "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    name: "Anjali Sharma",
+    email: "anjali.sharma@gmail.com",
+    photo: "/assets/avatar.png",
+    phone: "9876543211",
     subjects: ["History"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "101 Old St, Delhi, India",
     meeting: "https://calendly.com/jayfrench/meeting", // Calendly link
   },
   {
     id: 5,
     teacherId: "1234567890",
-    name: "Jane Smith",
-    email: "jane@gmail.com",
-    photo:
-      "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    name: "Priya Singh",
+    email: "priya.singh@gmail.com",
+    photo: "/assets/avatar.png",
+    phone: "9876543212",
     subjects: ["Music", "History"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "202 Main St, Chennai, India",
     meeting: "https://calendly.com/janesmith/meeting", // Calendly link
   },
   {
     id: 6,
     teacherId: "1234567890",
-    name: "Anna Santiago",
-    email: "anna@gmail.com",
-    photo:
-      "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    name: "Suresh Reddy",
+    email: "suresh.reddy@gmail.com",
+    photo: "/assets/avatar.png",
+    phone: "9876543213",
     subjects: ["Physics"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "303 New St, Hyderabad, India",
     meeting: "https://calendly.com/annasantiago/meeting", // Calendly link
   },
   {
     id: 7,
     teacherId: "1234567890",
-    name: "Allen Black",
-    email: "allen@black.com",
-    photo:
-      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    name: "Amit Verma",
+    email: "amit.verma@gmail.com",
+    photo: "/assets/avatar.png",
+    phone: "9876543214",
     subjects: ["English", "Spanish"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "404 Old St, Pune, India",
     meeting: "https://calendly.com/allenblack/meeting", // Calendly link
   },
   {
     id: 8,
     teacherId: "1234567890",
-    name: "Ophelia Castro",
-    email: "ophelia@castro.com",
-    photo:
-      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    name: "Neha Gupta",
+    email: "neha.gupta@gmail.com",
+    photo: "/assets/avatar.png",
+    phone: "9876543215",
     subjects: ["Math", "Geometry"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "505 New St, Kolkata, India",
     meeting: "https://calendly.com/opheliacastro/meeting", // Calendly link
   },
   {
@@ -235,12 +227,11 @@ export const MeetTeachersData = [
     teacherId: "1234567890",
     name: "Derek Briggs",
     email: "derek@briggs.com",
-    photo:
-      "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    photo: "/assets/avatar.png",
+    phone: "9876543216",
     subjects: ["Literature", "English"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "606 Old St, Jaipur, India",
     meeting: "https://calendly.com/derekbriggs/meeting", // Calendly link
   },
   {
@@ -248,12 +239,11 @@ export const MeetTeachersData = [
     teacherId: "1234567890",
     name: "John Glover",
     email: "john@glover.com",
-    photo:
-      "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    photo: "/assets/avatar.png",
+    phone: "9876543217",
     subjects: ["Biology"],
     classes: ["5A", "4B", "3C"],
-    address: "123 Main St, Anytown, USA",
+    address: "707 New St, Ahmedabad, India",
     meeting: "https://calendly.com/johnglover/meeting", // Calendly link
   },
 ];
