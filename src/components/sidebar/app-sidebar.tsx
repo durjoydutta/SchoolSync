@@ -92,6 +92,7 @@ const adminData = {
       items: [
         { title: "Check Availability", url: "/list/meeting" },
         { title: "Schedule Meeting", url: "https://parent-teacher-dbms.vercel.app/" },
+        { title: "Meeting History", url: "https://parent-teacher-dbms.vercel.app/meetings"},
         { title: "Chat Message", url: "/list/message" },
       ],
     },
